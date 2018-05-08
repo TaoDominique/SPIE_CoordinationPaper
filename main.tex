@@ -187,10 +187,11 @@
  		\label{ID_PR}
  	\end{figure}
 	 As one can see with the lines \ref{condition1}, \ref{condition2}, \ref{condition3}, \ref{condition4} in the algorithm \ref{First_algo}, the four main conditions correspond to the possibilities for the neighbour positioner to affect the states of the agent positioner. Only the agent positioner states is changed, the reason is simply because algorithm \ref{First_algo} is applied to each positioner with respect to each of its neighours in the system.\\
-	 If both positioners are OFF (line \ref{condition1}), then it means that both have retained the information on the higher priority positioners which put them OFF. By comparing their "MemPr" states and in case the agent positioner one is smaller, it will have its "MemPr" states changed equalling the one from its neighbour. One can view it as having the agent positioner being influenced, through the neigbour positioner, by the high priority positioner that put this neighbour positioner OFF, such that the agent positioner will not oppose the movement of this high priority positioner towards its target.\\
-	 The trivial case (line \ref{condition2}) is when two positioners are ON. The comparison is then just with their pre-assigned priorities to determine if the agent positioner will be OFF and memorize the Id and pre-assigned priority information from the other positioner.\\
-	 The two last mixed cases is when the agent and the neighbour positioner have different ON/OFF states (line \ref{condition3}, \ref{condition4}).  When the agent positioner is ON and have a pre-assigned priority smaller than the memorized priority "MemPr" of the neighbour positioner, the agent is becoming OFF with having the same memorized priority than the OFF neighbours positioner for the same reason as explained with the case of both positioners being OFF. \\
-	 In the other case when the agent positioner is OFF with its neighbour positioner being ON, the priority comparison will be done between the one that the agent has memorized when it became OFF with the pre-assigned priority of the neighbour. if smaller, it will change its "MemPr" to remember the higher priority one. \\\\
+	As a general rule for the comparison in line \ref{comparison1}, \ref{comparison2}, \ref{comparison3}, \ref{comparison4}, the priority used depends on the ON/OFF state of the positioner: if the positioner is ON, the pre-assigned priority is used, otherwise it is the memorized priority "MemPr". \\
+	Similarly, the possible values for the state "MemPr" also depends on the first state ON/OFF of the neighbour positioner. 	
+	With "MemPr" and "MemId" designed for OFF positioner, we showcase the reason of these conditions by reasoning 
+	
+	 \\\\
 	In all cases, the agent positioner always remember the ID of the neighbour positioner, that is used to track down all the positioners responsible for the chain reaction
 	   
 	\begin{algorithm}[H]
@@ -208,7 +209,7 @@
 		{		\BlankLine
 			\uIf{agent == OFF and neighbour == OFF \label{condition1}}{
 						\BlankLine
-				\uIf{agent.MemPr $<$ neighbour.MemPr}{
+				\uIf{agent.MemPr $<$ neighbour.MemPr \label{comparison1}}{
 					\BlankLine
 					agent.MemId =  Neighbour Id\;\\
 					agent.MemPr =  Neighbour.MemPr\;\\
@@ -216,7 +217,7 @@
 			}
 			\uElseIf{agent == ON and neighbour == ON \label{condition2}}{
 						\BlankLine
-				\uIf{Agent Priority $<$ Neighbour Priority}{
+				\uIf{Agent Priority $<$ Neighbour Priority \label{comparison2}}{
 					\BlankLine
 					agent.ON/OFF = OFF \;\\
 					agent.MemId =  Neighbour Id\;\\
@@ -225,7 +226,7 @@
 			}
 			\uElseIf{agent == OFF and neighbour == ON \label{condition3}}{
 						\BlankLine
-				\uIf{agent.MemPr $<$ Neighbour Priority}{
+				\uIf{agent.MemPr $<$ Neighbour Priority \label{comparison3}}{
 					\BlankLine
 					agent.MemId =  Neighbour Id\;\\
 					agent.MemPr =  Neighbour Priority\;\\
@@ -233,7 +234,7 @@
 			}
 			\uElseIf{agent == ON and neighbour == OFF \label{condition4}}{
 						\BlankLine
-				\uIf{Agent Priority $<$ neighbour.MemPr}{
+				\uIf{Agent Priority $<$ neighbour.MemPr \label{comparison4}}{
 					\BlankLine
 					 agent.ON/OFF = OFF \;\\
 					agent.MemId =  Neighbour Id\;\\
