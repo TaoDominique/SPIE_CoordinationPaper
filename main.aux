@@ -1,0 +1,110 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{MakaremDESIConference,makarem2015decentralized}
+\citation{MakaremMoons}
+\citation{MakaremMoons,MakaremDESIConference,makarem2015decentralized}
+\@writefile{toc}{\contentsline {section}{\numberline {1}INTRODUCTION}{301}{section.1}}
+\newlabel{INTRODUCTION}{{1}{301}{INTRODUCTION}{section.1}{}}
+\citation{MakaremMoons}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CAD positioner model}}{302}{figure.1}}
+\newlabel{MOONS_positioner_representation}{{1}{302}{CAD positioner model}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MOONS positioner in simulation}}{302}{figure.2}}
+\newlabel{MOONS_positioner_simulation}{{2}{302}{MOONS positioner in simulation}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces DESI positioner in simulation}}{302}{figure.3}}
+\newlabel{DESI_positioner_representation}{{3}{302}{DESI positioner in simulation}{figure.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}PRIORITY BASED COORDINATION}{302}{section.2}}
+\newlabel{PRIORITY BASED COORDINATION}{{2}{302}{PRIORITY BASED COORDINATION}{section.2}{}}
+\citation{MakaremMoons}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}System representation}{303}{subsection.2.1}}
+\newlabel{Finite-state machine}{{2.1}{303}{System representation}{subsection.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Representation of different variables within our system}}{303}{figure.4}}
+\newlabel{sys_representation}{{4}{303}{Representation of different variables within our system}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Finite-state machine}{303}{subsection.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}First State: ON/OFF}{303}{subsubsection.2.2.1}}
+\newlabel{first_state_chap}{{2.2.1}{303}{First State: ON/OFF}{subsubsection.2.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{304}{figure.5}}
+\newlabel{key}{{5}{304}{\centering Principle of ON/OFF state illustrated with two images (left to right): \\ (left) Positioner B inside $Z_{ON/OFF}$ of positioner A doesn't have any attrative force and is subject to repulsive force from positioner A, making it going to the opposite direction; (right) The same positioner B, once repulsed outside of positioner A zone $Z_{ON/OFF}$ by positioner A itself, regains its attractive force\\}{figure.5}{}}
+\newlabel{First_state}{{5}{304}{\centering Principle of ON/OFF state illustrated with two images (left to right): \\ (left) Positioner B inside $Z_{ON/OFF}$ of positioner A doesn't have any attrative force and is subject to repulsive force from positioner A, making it going to the opposite direction; (right) The same positioner B, once repulsed outside of positioner A zone $Z_{ON/OFF}$ by positioner A itself, regains its attractive force\\}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Second \& third state: ID and Priority memorization}{304}{subsubsection.2.2.2}}
+\newlabel{ID_PR0}{{2.2.2}{305}{Second \& third state: ID and Priority memorization}{subsubsection.2.2.2}{}}
+\newlabel{ID_PR1}{{2.2.2}{305}{Second \& third state: ID and Priority memorization}{subsubsection.2.2.2}{}}
+\newlabel{ID_PR2}{{2.2.2}{305}{Second \& third state: ID and Priority memorization}{subsubsection.2.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{305}{figure.6}}
+\newlabel{ID_PR}{{6}{305}{\centering Positioner Chain Reaction using MemId and MemPr states, following algorithm \ref {First_algo} for interaction\\ (left image) Positioner A with the biggest priority influences its neighbour positioner C which remembers the priority and id information of A when becoming OFF as shown in the red rectangle; (middle image) Even if positioner C priority is smaller than B, because C is OFF, B has to look on the information of C to find how that the movement of the positioner that influenced C is more important due to its priority, B becomes OFF and carry on the information that C has;(right image) Once positioner A is out of the zone $Z_{ON/OFF}$ with C, deep first search is used to reset the information carried by the chain reaction}{figure.6}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces agent\_status($agent$, $neighbour$)}}{306}{algorithm.1}}
+\newlabel{AlgoRedSoftEnve}{{1}{306}{Second \& third state: ID and Priority memorization}{algorithm.1}{}}
+\newlabel{First_algo}{{1}{306}{Second \& third state: ID and Priority memorization}{algorithm.1}{}}
+\newlabel{arr_condition_line}{{1}{306}{Second \& third state: ID and Priority memorization}{AlgoLine.0.1}{}}
+\newlabel{condition1}{{3}{306}{Second \& third state: ID and Priority memorization}{AlgoLine.0.3}{}}
+\newlabel{condition2}{{6}{306}{Second \& third state: ID and Priority memorization}{AlgoLine.0.6}{}}
+\newlabel{condition3}{{9}{306}{Second \& third state: ID and Priority memorization}{AlgoLine.0.9}{}}
+\newlabel{condition4}{{12}{306}{Second \& third state: ID and Priority memorization}{AlgoLine.0.12}{}}
+\newlabel{conditionSame}{{15}{306}{Second \& third state: ID and Priority memorization}{AlgoLine.0.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Fourth state: Arrived}{307}{subsubsection.2.2.3}}
+\newlabel{sub_chap_fourth_state}{{2.2.3}{307}{Fourth state: Arrived}{subsubsection.2.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{307}{figure.7}}
+\newlabel{fourth_state}{{7}{307}{\centering Problematic situation with target inside higher priority "already-arrived" positioner zone}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Fifth state: Deadlock and pseudo-priority}{308}{subsubsection.2.2.4}}
+\newlabel{sub_chapter_fifth_state}{{2.2.4}{308}{Fifth state: Deadlock and pseudo-priority}{subsubsection.2.2.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{State and Principle}{308}{section*.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{309}{figure.8}}
+\newlabel{5thState}{{8}{309}{\centering Principle of 5th state, "lock\_sm", and pseudo-priority, "psPr" :\\ With the same priority, inside their zone "$Z_{ON/OFF}$" and in "lock\_sm" situation, the distance from positioner B end-effector to its target being smaller compared to the end-effector C to target C, the positioner B becomes more important symbolised by its pseudo-priority, "PsPr", being bigger and both fifth state equal to B}{figure.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Deadlock localization}{309}{section*.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{309}{figure.9}}
+\newlabel{projection}{{9}{309}{\centering 1D configuration:\\ Projection of agent and neighbour target on line created from closest part of both positioners}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{310}{figure.10}}
+\newlabel{look_UpTableLogic}{{10}{310}{\centering Configuration examples of look up table logic:\\ On the left column, positioner A and B movements are not opposing each other nor are the positioner on the way of the other movement; On the right column, the positioner B ending up at its target will hinder the movement of positioner A to its target, being in between them}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Simulation \& RESULTS}{310}{section.3}}
+\newlabel{RESULTS}{{3}{310}{Simulation \& RESULTS}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Software \& Hardware}{310}{subsection.3.1}}
+\newlabel{Software Hardware}{{3.1}{310}{Software \& Hardware}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Test cases}{310}{subsection.3.2}}
+\newlabel{Test cases}{{3.2}{310}{Test cases}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Priority and Repeatability: convergence and time performance}{311}{subsubsection.3.2.1}}
+\newlabel{configuration1_conv}{{3.2.1}{311}{Priority and Repeatability: convergence and time performance}{subsubsection.3.2.1}{}}
+\newlabel{configuration1_time}{{3.2.1}{311}{Priority and Repeatability: convergence and time performance}{subsubsection.3.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{311}{figure.11}}
+\newlabel{configuration1_conv}{{3.2.1}{311}{Priority and Repeatability: convergence and time performance}{figure.11}{}}
+\newlabel{configuration1_time}{{3.2.1}{311}{Priority and Repeatability: convergence and time performance}{figure.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{311}{figure.12}}
+\newlabel{configuration1_conv}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.12}{}}
+\newlabel{configuration1_time}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.13}}
+\newlabel{configuration1_conv}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.13}{}}
+\newlabel{configuration1_time}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.14}}
+\newlabel{configuration1_conv}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.14}{}}
+\newlabel{configuration1_time}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.15}}
+\newlabel{configuration1_conv}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.15}{}}
+\newlabel{configuration1_time}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.16}}
+\newlabel{configuration1_conv}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.16}{}}
+\newlabel{configuration1_time}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.17}}
+\newlabel{configuration1_conv}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.17}{}}
+\newlabel{configuration1_time}{{3.2.1}{312}{Priority and Repeatability: convergence and time performance}{figure.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.18}}
+\bibdata{report}
+\bibcite{MakaremDESIConference}{1}
+\bibcite{makarem2015decentralized}{2}
+\bibcite{MakaremMoons}{3}
+\bibstyle{spiebib}
+\@writefile{toc}{\contentsline {section}{\numberline {4}CONCLUSION}{313}{section.4}}
+\newlabel{CONCLUSION}{{4}{313}{CONCLUSION}{section.4}{}}

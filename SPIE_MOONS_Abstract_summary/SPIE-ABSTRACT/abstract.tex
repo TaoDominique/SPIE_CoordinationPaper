@@ -1,0 +1,48 @@
+\documentclass[]{spie}  %>>> use for US letter paper
+%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
+%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
+
+\renewcommand{\baselinestretch}{1.0} % Change to 1.65 for double spacing
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Priority coordination of fiber positioners\\
+	in multi-objects spectrographs }
+
+\author[a]{Dominique Tao}
+\author[b]{Laleh Makarem}
+\author[c]{Mohamed Bouri}
+\author[d]{Jean-Paul Kneib}
+\author[e]{Denis Gillet}
+\affil[a,b,e]{REACT, Ecole Polytechnique Federale de Lausanne (EPFL), Switzerland}
+\affil[c]{LSRO, Ecole Polytechnique Federale de Lausanne (EPFL), Switzerland}
+\affil[d]{LASTRO, Ecole Polytechnique Federale de Lausanne (EPFL), Switzerland}
+
+\authorinfo{Further author information:\\
+	dominique.tao@alumni.epfl.ch, mohamed.bouri@epfl.ch, jean-paul.kneib@epfl.ch, denis.gillet@epfl.ch
+}
+
+% Option to view page numbers
+\pagestyle{empty} % change to \pagestyle{plain} for page numbers   
+\setcounter{page}{301} % Set start page numbering at e.g. 301
+\begin{document} 
+	\maketitle
+	\begin{abstract}
+		Projects such as "The Dark Energy Spectroscopic Instrument" (DESI) or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS) are developping spectographs, composed with more than thousand of optical fibers in a confined hexagonal focal plane, to study the evolution of the universe. Such systems make real time observation possible as each optical fiber is moved simultaneously to their pre-assigned targets by a 2-arm positioner within an short interval of time to monitor a specific astronomical object. Moreover, astronomers prioritize the observation of some objects over those that hold less information, creating a hierarchy of importances or priorities. In a non-complete scenario where not all the positioners can reach their targets, being able to ensure the observation of the important ones is a desirable feature. \\
+		In previous works, a decentralized navigation function from the family of potential field was used for collision-free coordination. While it is complete for DESI [\citenum{MakaremDESIConference,makarem2015decentralized}], it is different for MOONS [\citenum{MakaremMoons}] as the second arm of their positioners is two time the length of its first one. Covering a larger working space, they are prone to deadlocks, a situation where two or more positioners are blocked by each other and so unable to reach their targets.\\
+		In this paper and in the framework of MOONS project, as an extension of the decentralized navigation function, we present our new approach to integrate pre-assigned priority to positioners in order to coordinate them and to solve deadlocks situations. For this purpose, a finite-state machine combined with distance-based heuristics is used to regulate their movements. While their states dictate their behaviors with respect to each others, distance-based heuristics are used to limit their states transition only when interacting with their neighbours and to localize possible deadlock situations. With a local interaction, the advantage of such method lies in its simplicity as it does not burden that much the time complexity, being quasilinear. In addition, since it does not depend on the positioner's geometry, it is also scalable to other positioner's system. \\
+		A motion planning simulator with graphic interface, developed in python is used to validate the priority coordination of the system. The trajectories are first pre-computed before being sent in open-loop to the positioners.
+		As a result, the positioners converging to their target improve from 60-70\% to 80-95\%. 
+		Although it was predictable and logic, the trajectories pre-computation time is longer than just using the decentralized navigation function since another layer of algorithm is added on top of it, which is/can be compensated with more performant hardwares. 
+	\end{abstract}
+	
+	% Include a list of keywords after the abstract 
+	\keywords{ MOONs, Optical fiber positioners, Priority coordination, Finite-state machine, distance-based heuristics, Deadlock problem}
+
+% References
+\bibliography{report} % bibliography data in report.bib
+\bibliographystyle{spiebib} % makes bibtex use spiebib.bst
+
+\end{document} 

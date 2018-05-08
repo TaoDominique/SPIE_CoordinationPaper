@@ -1,0 +1,39 @@
+\documentclass[]{spie}  %>>> use for US letter paper
+%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
+%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
+
+\renewcommand{\baselinestretch}{1.0} % Change to 1.65 for double spacing
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Priority coordination of fiber positioners\\
+	in multi-objects spectrographs }
+
+\author[a]{Dominique Tao}
+\author[b]{Laleh Makarem}
+\author[c]{Mohamed Bouri}
+\author[d]{Jean-Paul Kneib}
+\author[e]{Denis Gillet}
+\affil[a,b,e]{REACT, Ecole Polytechnique Federale de Lausanne (EPFL), Switzerland}
+\affil[c]{LSRO, Ecole Polytechnique Federale de Lausanne (EPFL), Switzerland}
+\affil[d]{LASTRO, Ecole Polytechnique Federale de Lausanne (EPFL), Switzerland}
+
+
+\authorinfo{Further author information:\\
+	dominique.tao@alumni.epfl.ch, mohamed.bouri@epfl.ch, jean-paul.kneib@epfl.ch, denis.gillet@epfl.ch
+}
+
+% Option to view page numbers
+\pagestyle{empty} % change to \pagestyle{plain} for page numbers   
+\setcounter{page}{301} % Set start page numbering at e.g. 301
+
+\begin{document} 
+	\maketitle
+	
+
+		\section*{Summary}
+In MOONS (Multi Object Optical and Near-infrared Spectrograph), a thousand optical fibers are moved to their pre-assigned targets by a 2-arm positioners to study specific parts of the universe. As some astronomical objects hold more information than others, ensuring their observations is a desirable feature, especially when not all the positioners can converge to their targets and are prone to deadlock. On top of a decentralized navigation function for collision-free motion, we propose a finite state machine algorithm combined with distance-based heuristics to take into account their priorities or importances, coordinating their movement accordingly. An improvement from 60-75\% to 80-95\%  of "positioners to targets" convergence is obtained from simulation.
+	
+\end{document} 

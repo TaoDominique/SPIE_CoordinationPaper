@@ -1,0 +1,47 @@
+%% report.bib - contains BiBtex input for bibliography
+@book{makarem2015decentralized,
+  title={Decentralized Multi-robot Coordination in Crowded Workspaces},
+  author={Makarem, L. and Gillet, D.},
+  url={https://books.google.ch/books?id=NNdvrgEACAAJ},
+  year={2015},
+  publisher={EPFL}
+}
+ 
+@inproceedings{MakaremDESIConference, 
+	author = " L. Makarem  and  J.-P. Kneib and D. Gillet  and H. Bleuler and M. Bouri  and  L. Jenni and F. Prada  and J. Sanchez", 
+	title  = "Collision avoidance in next-generation fiber positioner robotic systems for large survey spectrographs", 
+	series = "Astronomy \& Astrophysics", 
+	volume = "566",
+	pages  = "A84", 
+	year   = "2004"	} 
+	
+@proceeding{MakaremMoons,
+	author = {Makarem, Laleh and Kneib, Jean-Paul and Gillet, Denis},
+	
+	title = {
+	Collision-free coordination of fiber positioners in multi-object spectrographs
+	},
+	
+	journal = {Proc. SPIE},
+	
+	volume = {9913},
+	
+	number = {},
+	
+	pages = {99130V-99130V-9},
+	
+	abstract = {
+	Many fiber-fed spectroscopic survey projects, such as DESI, PFS and MOONS, will use thousands of fiber positioners packed at a focal plane. To maximize observation time, the positioners need to move simultaneously and reach their targets swiftly. We have previously presented a motion planning method based on a decentralized navigation function for the collision-free coordination of the fiber positioners in DESI. In MOONS, the end effector of each positioner handling the fiber can reach the centre of its neighbours. There is therefore a risk of collision with up to 18 surrounding positioners in the chosen dense hexagonal configuration. Moreover, the length of the second arm of the positioner is almost twice the length of the first one. As a result, the geometry of the potential collision zone between two positioners is not limited to the extremity of their end-effector, but surrounds the second arm. In this paper, we modify the navigation function to take into account the larger collision zone resulting from the extended geometrical shape of the positioners. The proposed navigation function takes into account the configuration of the positioners as well as the constraints on the actuators, such as their maximal velocity and their mechanical clearance. Considering the fact that all the positioners' bases are fixed to the focal plane, collisions can occur locally and the risk of collision is limited to the 18 surrounding positioners. The decentralizing motion planning and trajectory generation takes advantage of this limited number of positioners and the locality of collisions, hence significantly reduces the complexity of the algorithm to a linear order. The linear complexity ensures short computation time. In addition, the time needed to move all the positioners to their targets is independent of the number of positioners. These two key advantages of the chosen decentralization approach turn this method to a promising solution for the collision-free motion-planning problem in the next- generation spectroscopic survey projects. A motion planning simulator, exploited as a software prototype, has been developed in Python. The pre-computed collision-free trajectories of the actuators of all the positioners are fed directly from the simulator to the electronics controlling the motors. A successful demonstration of the effectiveness of these trajectories on the real positioners as well as their simulated counterparts are put side by side in the following online video sequence (https://goo.gl/YuwwsE).
+	},
+	
+	year = {2016},
+	
+	doi = {10.1117/12.2231716},
+	
+	URL = { http://dx.doi.org/10.1117/12.2231716},
+	
+	eprint = {}
+	
+	}
+
+    
