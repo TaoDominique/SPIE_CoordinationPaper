@@ -189,7 +189,7 @@
 	 As one can see with the lines \ref{condition1}, \ref{condition2}, \ref{condition3}, \ref{condition4} in the algorithm \ref{First_algo}, the four main conditions correspond to the possibilities for the neighbour positioner to affect the states of the agent positioner. Only the agent positioner states is changed, the reason is simply because algorithm \ref{First_algo} is applied to each positioner with respect to each of its neighours in the system.\\
 	As a general rule for the comparison in line \ref{comparison1}, \ref{comparison2}, \ref{comparison3}, \ref{comparison4}, the priority used depends on the ON/OFF state of the positioner: if the positioner is ON, the pre-assigned priority is used, otherwise it is the memorized priority "MemPr". \\
 	Similarly, the possible values for the state "MemPr" also depends on the first state ON/OFF of the neighbour positioner. 	
-	With "MemPr" and "MemId" designed for OFF positioner, we showcase the reason of these conditions by reasoning 
+	To understand why "MemPr" and "MemId" are designed exlcusively for OFF positioner, we showcase the reason of these conditions by reasoning 
 	
 	 \\\\
 	In all cases, the agent positioner always remember the ID of the neighbour positioner, that is used to track down all the positioners responsible for the chain reaction
