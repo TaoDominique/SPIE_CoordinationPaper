@@ -113,7 +113,7 @@
 	\label{first_state_chap}
 	The first state  is defined as the "ON/OFF" state. With the creation of a "ON/OFF zone", $Z_{ON/OFF}$, associated to a positioner, any neighbour positioners with a lower priority inside will have their attractive forces towards their targets disabled, ie $F_a = 0$. We refer to such a positioner as an OFF one in opposition to an ON one with its attractive force still active.
 	Similarly to the influence zone $Z_{F_{r}}$, we use the same circle shape for $Z_{ON/OFF}$, centered on all the parts of the positioner in order to entirely cover it.\\\\
-	 With only repulsive forces to prevent collision, it allows the ON positioner with the biggest priority to circulate through its OFF neighbours with less resistance, being the only one with an attractive force. This principle to solve potential field local minima with priority is illustrated in figure \ref{First_state}. 	
+	 With only repulsive forces to prevent collision, it allows the ON positioner with the biggest priority to circulate through its OFF neighbours with less resistance, being the only one with an attractive force. This principle using priorities to solve the potential field local minima is illustrated in figure \ref{First_state}. 	
 	\begin{figure}[H]
 		\centering
 		\begin{minipage}[t]{6.5cm}
@@ -128,9 +128,10 @@
 		\label{First_state}
 	\end{figure}
 	
-	A direct consequence of using only this state is the problem of deadlock due to oscillations at the limit of the zone $Z_{ON/OFF}$. With an ON positioner A and its OFF neighbour B with lower priority inside the zone $Z_{ON/OFF}$ of A (figure \ref{First_state} right image), when the positioner B is at the border of the zone, it can be subject to the problem of reactivation and deactivation of its attractive force. If the reactivated attractive force is opposing the movement of the positioner A, it will re-enter its zone $Z_{ON/OFF}$ only to be repulsed again. This switching state process can block the positioner A as the neighbour positioner will keep oscillating at the same place.\\
+	A direct consequence of using only this state is the problem of deadlock due to oscillations at the limit of the zone $Z_{ON/OFF}$. Considering an ON positioner A and its OFF neighbour B with lower priority inside the zone $Z_{ON/OFF}$ of A (figure \ref{First_state} right image), when the positioner B is at the border of the zone, it can be subject to the problem of reactivation and deactivation of its attractive force. If the reactivated attractive force is opposing the movement of the positioner A, it will re-enter the zone $Z_{ON/OFF}$ of A only to be repulsed again. This switching state process can block the positioner A as the neighbour positioner B will keep oscillating at the same place.\\
 	
-	A deadlock can be interpreted as at least two positioners that stop moving towards their targets because of each other oscillating indefinitely at the same place in space. A moving average filter on the positioner's velocity can be used to  localize and unblock this situation by adding noise from it. Though it might be tempting to modify the magnitude of the different forces or of the noise, one has to consider the risk of collisions due to positioners sudden increase of velocity. In addition, only evaluating the velocity is necessary but not sufficient to detect a deadlock as explain later in the sub-chapter \ref{sub_chapter_fifth_state} since positioner can have a null velocity when arrived or when repulsing another one. \\\\
+	A deadlock can be interpreted as at least two positioners that stop moving towards their targets because of each other oscillating indefinitely at the same place in space. A moving average filter on the positioner's velocity can be used to  localize and unblock this situation by adding noise from it. Though it might be tempting to modify the magnitude of the different forces or of the noise, one has to consider the risk of collisions due to positioners sudden increase of velocity. \\
+	Furthermore, only evaluating the velocity is necessary but not sufficient to detect a deadlock as explain later in the sub-chapter \ref{sub_chapter_fifth_state} since positioners can have a null velocity when arrived or when repulsing another one. \\\\
 	With $v[t]$ the velocity of one positioner at time $t$, $y[t]$ is the output of the average moving filter of window $M$ such as:
 	\begin{equation}
 	\left\{
@@ -145,11 +146,11 @@
 	\, \right.
 	\label{}
 	\end{equation} 
-	We define $thres$, which value is defined experimentally, as the threshold representing when the positioner can be considered as stopped.
-	The result $y[t]$ is used to introduced noise once it is under this threshold. 
+	We define $thres$, which value is defined experimentally, as the threshold representing when the positioner can be considered as "stopped".
+	The result $y[t]$ is used to introduce noise once it is under this threshold. 
 		
 	\subsubsection{Second \& third state: ID and Priority memorization}
-	Having introduced the first state, we need to determine how positioners interact with each others depending not only on their pre-assigned priority but also on wether they are ON or OFF.\\\\
+	Having introduced the first state, we need to determine how positioners interact with each others depending not only on their pre-assigned priority but also on their  ON and OFF states.\\\\
 	As a matter of fact, deadlock situations can still occur when two ON high priority positioners are going against each other by propagating their oppposite movements through an intermediate low priority OFF positioner that is between them. This non-isolated scenario is illustrated in figure \ref{ID_PR} (left image) where two positioners A and B would have been blocking each other through the OFF positioner C if without any regulation based on their states.\\\\
 	This problematic situation can be solved by having a better communication between positioners in order to allow a "chain reaction", which we defined as the process of one OFF positioner changing the first state of an other neighbouring positioner that is not the one that originally influenced it. \\
 	
