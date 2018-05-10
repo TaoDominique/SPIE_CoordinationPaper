@@ -53,9 +53,8 @@
 	
 	\section{INTRODUCTION}
 	\label{INTRODUCTION}
-	Recently uncovered that not only the universe is expanding but also that its process is accelerating, massive spectroscopic surveys are used in many international projects such as  "The Dark Energy Spectroscopic Instrument" (DESI) or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS) to study its evolution by collecting data from different objects of our universe. The used spectrographs are composed by more than thousand of optical fiber bundles, each one moving at the same time to a pre-assigned target by a two arms robotics positioner, making real time observation possible.\\
-	
-	Anti-collision movement between positioners is therefore essential for a well-functioning system. While the completness of the system, ie convergence of all positioners to their targets, is ensured with the project DESI using a decentralized navigation function algorithm  [\citenum{MakaremMoons,MakaremDESIConference,makarem2015decentralized}], the same approach is not valid for MOONS because of its positioners second arm which is two time longer as represented in figure ~\ref{MOONS_positioner_simulation} - ~\ref{DESI_positioner_representation} , covering a larger workspace and hence creating possible collisions and deadlocks, a situation where positioners, blocked by one another, are unable to reach their targets.\\
+	Recently uncovered that not only the universe is expanding but also that its process is accelerating, massive spectroscopic surveys are used in many international projects such as  "The Dark Energy Spectroscopic Instrument" (DESI) or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS) to study its evolution. The used spectrographs are composed with more than thousand of optical fiber bundles, in a confined space. Each one are moving at the same time to a pre-assigned target by a two arms robotics positioner, making real time observation possible.\\\\
+	Anti-collision movement between positioners is therefore essential for a well-functioning system. While the completness of the system, ie convergence of all positioners to their targets, is ensured with the project DESI using a decentralized navigation function algorithm  [\citenum{MakaremMoons,MakaremDESIConference,makarem2015decentralized}], the same approach is not valid for MOONS: its positioners second arm being two time longer as shown in figure ~\ref{MOONS_positioner_simulation} - ~\ref{DESI_positioner_representation}, it is covering a larger workspace and hence creating possible collisions and deadlocks, a situation where positioners, blocked by one another, are unable to reach their targets.\\
 	
 	\begin{figure}[H]
 		\hspace{2cm}
@@ -76,9 +75,9 @@
 		\end{minipage}
 	\end{figure}
 			
-	Though desirable, having a non complete system is not as much of a serious issue since not all astronomical objects contain the same valuable information for the astronomers to study the evolution of the universe. They tend to prioritize the observation of the important targets even at the price of disregarding the less relevant ones.
+	Though desirable, having a non complete system is not a serious issue since not all astronomical objects contain the same valuable information to study the universe evolution. Astronomers prefer to prioritize the observation of the important targets even at the price of disregarding the less relevant ones.
 	
-	With MOONS framework and as an extension of the previous work using a decentralized navigation function for the collision avoidance [\citenum{MakaremMoons}], this paper explores an approach, through a finite state machine strategy, to take into account the importance/priority of each positioner's target into the coordination of their movements. As it gives more chance for higher priority positioners to reach their targets, its other objective is also to increase the positioners convergence with the goal of having a complete system.\\
+	With MOONS framework and as an extension of the previous work using a decentralized navigation function for collision avoidance [\citenum{MakaremMoons}], this paper explores an approach, through a finite state machine strategy, to take into account the importance/priority of each positioner's target into the coordination of their movements. As it gives more chance for higher priority positioners to reach their targets, its other objective is also to increase the positioners convergence with the goal of having a complete system.\\
 		
 	The organization of this paper is as followed: In section \ref{PRIORITY BASED COORDINATION}, a representation of the system and the finite state machine is described. Then we explain how deadlocks are localized and solved using an heuristic vector-distance based strategy. Section \ref{RESULTS} then presents the result of our approach on various test cases of positioner-configuration. As a conclusion, future research and possible improvements are discussed in section \ref{CONCLUSION}.
 	
@@ -86,27 +85,26 @@
 	\label{PRIORITY BASED COORDINATION}
 	
 	
-	Unlike many motion planning algorithms, the choice of using potential field to move simultaneously thousand of positioners stems from its time complexity and simplicity, enabling fast pre-computation of their anti-collision movements towards their targets. However, due to local minimum problems, using simple potential field to handle more complex systems which can exhibit deadlock situations prove to be complicated, requiring either a more complex developement of the algorithm or an additional layer of complexity.\\\\
-	In this work, we design a decision layer using a finite state machine on top of decentralized navigation function algorithm. It's role is to manage the behaviors of the positioners during their local interaction with neighbour positioners which have different orders of priorities. 
+	Unlike many motion planning algorithms, the choice of using potential field to move simultaneously thousand of positioners stems from its time complexity and simplicity. It enables fast pre-computation of their anti-collision movements towards their targets. However, due to local minimum problems, using simple potential field to handle more complex systems which can exhibit deadlock situations prove to be complicated, requiring either a more complex developement of the algorithm or an additional layer of complexity.\\\\
+	In this work, we design a decision layer using a finite state machine which is built on top of a decentralized navigation function algorithm. It's role is to manage the interaction of positioners with their neighbour positioners having different orders of priorities. 
 
 	\subsection{System representation}	
 		\label{Finite-state machine} 
 	
 	Before explaining our approach, we need to establish how the system with priorities is defined. 
-	 A depiction of the MOONS positioner and its equivalent in simulation are already shown in figure \ref{MOONS_positioner_representation} - \ref{MOONS_positioner_simulation}, where only the second arm (corresponding to the curve segment of the CAD model) is represented. Also in figure \ref{sys_representation}, the red dot represents the target where the positioner's end-effector, holding the optic fiber represented by the dot at the extremity of the second arm, has to go.
+	 A depiction of the MOONS positioner and its equivalent in simulation are shown in figure \ref{MOONS_positioner_representation} - \ref{MOONS_positioner_simulation} - \ref{sys_representation}, where only the second arm (corresponding to the curve segment of the CAD model) is represented. The red dot is the target pre-assigned to the positioner's end-effector which holds the optic fiber represented by the dot at the extremity of the second arm.
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.56]{images/system_representation.jpg}
-			\caption{Representation of different variables within our system}
+			\caption{Variables representation of the system}
 			\label{sys_representation}
 		\end{figure}
 	
 	Let $p =$ \{$1,2,3,4$\} be the pre-assigned priority of a positioner, with 4 for the most important target and 1 the less important one. \\
-	$D=$\{$D_e, D_m, D_j$\} is the set of distance between respectively the end-effector, middle and joint part of one positioner to another one part. In figure \ref{sys_representation}, these distances are represented from positioner B to only the end-effector part of positioner A.
-
-	As dictated by the principle of the potential field, each positioner is drawn to its target by an attractive force $F_a$ and avoiding its $i^{ieme}$ neighouring positioners with repulsive forces, $F_{ri}$. Further details on the forces implementations are given in [\citenum{MakaremMoons}]. \\
-	 With more than thousand positioners in a compact space and with each one of them having at most 6 neighbours, a "zone of influence", $Z_{F_{r}}$, is created  such that a repulsive force is active only within this zone to limit and simplify the number of forces felt by one positioner from the others.\\ 
-	 This zone $Z_{F_{r}}$ can be of any shape, but in this work,  it was decided to be a circle around each part of the positioners in order to have a simple cover on the whole positioner, as shown in figure \ref{sys_representation} with only around the end-effector part. The source of the repulsive force comes from the part of the neighbour positioner that is inside the zone $Z_{F_{r}}$.\\
+	$D=$\{$D_e, D_m, D_j$\} is the set of distance between respectively the end-effector, middle and joint part of one positioner to another one's part. In figure \ref{sys_representation}, these distances are represented from positioner B to only the end-effector part of positioner A.\\\\
+	As dictated by the principle of the potential field, each positioner is drawn to its target by an attractive force $F_a$ and avoiding its $i^{ieme}$ neighouring positioners with a repulsive forces, $F_{ri}$. Further details on the forces implementations in the context of MOONS are given in [\citenum{MakaremMoons}]. \\
+	 With more than thousand positioners in a compact space and with each one having at most 6 neighbours, a "zone of influence", $Z_{F_{r}}$, is used for the repulsive force. It is active only within this zone to limit and simplify the number of forces felt by one positioner from the others.\\ 
+	 This zone $Z_{F_{r}}$ can be of any shape, but in this work,  it was decided to be a circle around each part of the positioners in order to have a simple cover on the whole positioner. The source of the repulsive force comes from the part of the neighbour positioner that is inside the zone $Z_{F_{r}}$.\\
 	 
 	\subsection{Finite-state machine}	
 	
