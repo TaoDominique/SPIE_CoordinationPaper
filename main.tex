@@ -150,8 +150,8 @@
 	The result $y[t]$ is used to introduce noise once it is under this threshold. 
 		
 	\subsubsection{Second \& third state: ID and Priority memorization}
-	Having introduced the first state, we need to determine how positioners interact with each others depending not only on their pre-assigned priority but also on their  ON and OFF states.\\\\
-	As a matter of fact, deadlock situations can still occur when two ON high priority positioners are going against each other by propagating their oppposite movements through an intermediate low priority OFF positioner that is between them. This non-isolated scenario is illustrated in figure \ref{ID_PR} (left image) where two positioners A and B would have been blocking each other through the OFF positioner C if without any regulation based on their states.\\\\
+	Having introduced new variables with the first state, we need to determine how positioners interact with each others depending not only on their pre-assigned priority but also on their  ON and OFF states.\\\\
+	As for the reason, deadlock situations can occur when two ON high priority positioners are going against each other by propagating their oppposite movements through an intermediate low priority OFF positioner that is in-between them. This non-isolated scenario is illustrated in figure \ref{ID_PR} (left image) where two positioners A and B would have been blocking each other through the OFF positioner C if left without any regulation based on their states.\\\\
 	This problematic situation can be solved by having a better communication between positioners in order to allow a "chain reaction", which we defined as the process of one OFF positioner changing the first state of an other neighbouring positioner that is not the one that originally influenced it. \\
 	
 	To do so and also for a general better coordination of the system, we use the principle of memorization by introducing two new states associated to each positioner: 
@@ -250,18 +250,19 @@
 	
 	\subsubsection{Fourth state: Arrived}
 	\label{sub_chap_fourth_state}
-	With the supposition that a positioner with the highest priority, $p = 4$, has already arrived at destination, any lower priority positioners with their target inside its $Z_{ON/OFF}$ and $Z_{F_{r}}$ zone will be subject to repulsion forces and a change of their states, resulting in having their attractive forces disable once inside the zone and hence never reaching their targets.\\
+	With the supposition that a positioner with the highest priority, $p = 4$, is already at destination, any lower priority positioners with their targets inside its zones $Z_{ON/OFF}$ and $Z_{F_{r}}$  are subject to repulsion forces and a changes of their states. The results are their attractive forces being disabled once inside the zones and the positioners being repulsed without resistance, hence never reaching their targets.\\
 	\\
-	This particular oscillation scenario is shown in figure \ref{fourth_state}, where the positioner A with higher priority than positioner B, whose target is inside the zone of A, will desactivate the attractive force of B and repulse it. Like a similar problem already seen on sub-chapter \ref{first_state_chap} with the ON/OFF state, B is ON outside and OFF inside and hence will never reach its target.
+	This particular oscillation scenario is shown in figure \ref{fourth_state} with a the positioner A having a higher pre-assigned priority than a positioner B whose target is inside the zones of A. Once inside the $Z_{ON/OFF}$ and $Z_{F_{r}}$, the positioner B, changing to OFF, will have its attractive force deactivate and repulsed.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.64]{images/fourth_state.jpg}
 		\caption{\centering	Problematic situation with target inside higher priority "already-arrived" positioner zone}
 		\label{fourth_state}
 	\end{figure}
-	In order to solve this problematic behavior, a fourth state, "Arr", is introduced to qualify a positioner which already has arrived to its target. \\\\
-	Coming with this new state is the inability of the already converged positioner to affect any other positioners states within its zone $Z_{ON/OFF}$, regardless of their priorities, such that they can also converge to their targets which are inside its zone.\\\\
-	In addition, the zone $Z_{F_{r}}$  or the repulsive forces needs to be mitigated such that the repulsion forces felt from the other positioners do not hinder their convergences. Although several complex methods can be used for this purpose such as force magnitude reduction following a mathematical model for a better forces distribution, we decided to simply reduce the radius of our repulsion zone $Z_{F_{r}}$. Though two very close targets can make two positioners oscillates a little bit as the one arriving might repulse the one already arrived, it works surprisingly well by adding some dead-zone between the end-effector and its target or time delay before the positioner exit its "Arr" state.  
+	In order to solve this problematic behavior, a fourth state, "Arr", is introduced to qualify a positioner that has converged to its target. \\\\
+	Coming with this new state is the inability for the already converged positioner A to affect any other positioners states which are inside its zone $Z_{ON/OFF}$, regardless of their priorities.
+	Without having their attractive forces canceled, the neighbour positioners can converge to their targets that are inside the zone.\\\\
+	In addition, the zone $Z_{F_{r}}$ has to be mitigated such that the repulsive forces felt from the neighbour positioners do not hinder their convergences. Although several complex methods can be used, we decided to simply reduce the radius of the repulsion zone $Z_{F_{r}}$. Though two very close targets can make two positioners oscillates a little bit as the one arriving might repulse the one already arrived, both can converge surprisingly well by adding some dead-zone between the end-effector and its target or time delay before the positioner exit its "Arr" state.  
 	
 	\subsubsection{Fifth state: Deadlock and pseudo-priority}
 	\label{sub_chapter_fifth_state}
