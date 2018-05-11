@@ -339,7 +339,7 @@
 	\subsection{Tests \& results}
 	\label{Test cases}
 	
-	Repeatability tests are done in order to assess the performance and efficiency of our approach. For this purpose, we compare the results obtained from our finite state machine with the ones using only the decentralized navigation function algorithm. In the latter case, pre-assigned priorities are not taken into account as they are no mechanism to do so.\\\\
+	Repeatability tests are done in order to assess the performance and efficiency of our approach. For this purpose, we compare the results obtained from our finite state machine (FSM) with the ones using only the decentralized navigation function algorithm (Without FSM). In the latter case, pre-assigned priorities are not taken into account as they are no mechanism to do so.\\\\
 	In addition to all the figures seen so far which are real working examples of different priorities positioner interaction, the goal is also to assess the robustness of the algorithm to coordinate a whole system of positioners with a hierarchy of importance.
 	
 	\subsubsection{Repeatability: convergence and time performance}
@@ -350,7 +350,7 @@
 		\item Time in seconds necessary for the pre-computation of their movements.
 	\end{itemize}
 	The goal is not only to verify if the performance of our algorithm is repeatable over different configurations of our system but also if it is acceptable to use it in real time.\\
-	To this end, for each configuration test file, the total number of around a thousand of positioners is partitioned into 12 subsets of sub-total positioners, on which we run our algorithm.
+	To this end, for each configuration test file, the total number of around a thousand of positioners is partitioned into 12 subsets of sub-total positioners, on which we run our algorithm. The results are given in figures \ref{configuration1_result}, \ref{configuration2_result}, \ref{configuration3_result}, \ref{configuration4_result}, \ref{configuration5_result}, \ref{configuration6_result}, \ref{configuration7_result}, \ref{configuration8_result}.
 	
 	\begin{figure}[H]
 		\begin{minipage}{8.7cm}
@@ -382,6 +382,7 @@
 					& Without FSM  & 3.5  & 8.6 & 21.4 & 43.7 & 74.5  & 136.1 \\
 					\hline
 			\end{tabular}}
+				\label{configuration1_result}
 		\end{minipage}
 		\begin{minipage}{9cm}
 			\begin{minipage}[t]{4.2cm}
@@ -413,6 +414,7 @@
 					\hline
 				\end{tabular}
 				}
+			\label{configuration2_result}
 			\end{minipage}
 	\end{figure}
 \begin{figure}[H]
@@ -442,6 +444,7 @@
 				\hline
 			\end{tabular}
 			}
+			\label{configuration3_result} 
 		\end{minipage}
 		\begin{minipage}{9cm}
 			\begin{minipage}[t]{4.2cm}
@@ -469,6 +472,7 @@
 					\hline
 				\end{tabular}
 				}
+				\label{configuration4_result} 
 			\end{minipage}
 		\end{figure}
 \begin{figure}[H]
@@ -498,6 +502,7 @@
 				\hline
 			\end{tabular}
 			}
+			\label{configuration5_result} 
 		\end{minipage}
 		\begin{minipage}{9cm}
 			\begin{minipage}[t]{4.2cm}
@@ -525,6 +530,7 @@
 					\hline
 				\end{tabular}
 				}
+				\label{configuration6_result} 
 			\end{minipage}
 		\end{figure}
 \begin{figure}[H]
@@ -554,6 +560,7 @@
 				\hline
 			\end{tabular}
 			}
+		\label{configuration7_result} 
 		\end{minipage}
 		\begin{minipage}{9cm}
 			\begin{minipage}[t]{4.2cm}
@@ -580,10 +587,11 @@
 					& Without FSM  & 4  & 9.2 & 23.0 & 42.7 & 78.3  & 99.5 \\
 					\hline
 				\end{tabular}}
+				\label{configuration8_result} 
 			\end{minipage}
 		\end{figure}					
-	For all the configuration test, the general behavior of the system remains similar: when using our finite state machine, an improvement of positioners convergence from 60-70\% to 80-95\% can be observed for each test.\\
-	 However, as we expected, the computation time became bigger, growing into a quasilinear order, since we added an another layer of computation. With better optimization such as parallel computation and/or more performant hardwares, this burden can be compensated.\\\\
+	For all the configuration tests, the general behavior of the system remains similar: when using our finite state machine, an improvement of positioners convergence from 60-70\% to 80-95\% can be observed globally and for each test.\\
+	 However, the computation time is bigger, growing into a quasilinear order. It is an expected result since we added an another layer of computation to the already existing algorithm that we use for comparison. With better optimization such as parallel computation and/or more performant hardwares, this burden can be compensated.\\\\
 	 Though all their pre-assigned priorities to each positioner are the same value, the result of convergence improvement with our method also demonstrates indirectly the robustness of our algorithm to take into account different priorities. Due to the mechanism of the fifth state of the finite machine, interactions of positioners with similar priorities also involves all the other states as their priorities become different. \\\\
 %	\subsubsection{Special situations}
 %	Test cases illustrated in [\citenum{TestCaseMoon}] and showcasing problematic positioners configurations, ie specifically designed situations where two or more positioners are supposed to fail reaching their targets with just using the decentralized navigation function due to deadlocks, are used to test our algorithm.\\
