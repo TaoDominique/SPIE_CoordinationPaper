@@ -256,13 +256,14 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.64]{images/fourth_state.jpg}
-		\caption{\centering	Problematic situation with target inside higher priority "already-arrived" positioner zone}
+		\caption{\centering	Principle of fourth state "Arr":\\
+		Problematic configuration with target inside a higher priority "already-converged" positione zones $Z_{ON/OFF}$ and $Z_{F_{r}}$ }
 		\label{fourth_state}
 	\end{figure}
 	In order to solve this problematic behavior, a fourth state, "Arr", is introduced to qualify a positioner that has converged to its target. \\\\
 	Coming with this new state is the inability for the already converged positioner A to affect any other positioners states which are inside its zone $Z_{ON/OFF}$, regardless of their priorities.
 	Without having their attractive forces canceled, the neighbour positioners can converge to their targets that are inside the zone.\\\\
-	In addition, the zone $Z_{F_{r}}$ has to be mitigated such that the repulsive forces felt from the neighbour positioners do not hinder their convergences. Although several complex methods can be used, we decided to simply reduce the radius of the repulsion zone $Z_{F_{r}}$. Though two very close targets can make two positioners oscillates a little bit as the one arriving might repulse the one already arrived, both can converge surprisingly well by adding some dead-zone between the end-effector and its target or time delay before the positioner exit its "Arr" state.  
+	In addition, the zone $Z_{F_{r}}$ has to be mitigated such that the repulsive forces felt from the neighbour positioners do not hinder their convergences. Although several complex methods can be used, we decided to simply reduce the radius of the repulsion zone $Z_{F_{r}}$. Though two very close targets can make two positioners oscillates a little bit as the one arriving might repulse the one already arrived, both can stabilize and converge surprisingly well by adding some dead-zone between the end-effector and its target or time delay before the positioner exit its "Arr" state.  
 	
 	\subsubsection{Fifth state: Deadlock and pseudo-priority}
 	\label{sub_chapter_fifth_state}
@@ -333,26 +334,24 @@
 	\label{RESULTS}
 	\subsection{Software \& Hardware}
 	\label{Software Hardware}
-	To evaluate our approach, a simulator developed in python that recreates the shape and the behavior of the positioners is used. The trajectories of the positioners are first pre-computed and then given directly in open-loop to the electronics controlling the motors.\\  
-	The simulation tests were conducted on a Lenovo thinkpad T450s with a Intel Core i7-5600U @ 2.69GHz x 4 processor, GeForce 940M SSE2 graphic card on a ubuntu 14.04 LTS version.
-	\subsection{Test cases}
+	To evaluate our approach, a simulator developed in python which recreates the shape and the behavior of the positioners is used. The trajectories of the positioners are first pre-computed and then directly given in open-loop to the electronics controlling the motors.\\  
+	All simulation tests were conducted on a Lenovo thinkpad T450s with an Intel Core i7-5600U @ 2.69GHz x 4 processor, GeForce 940M SSE2 graphic card on an ubuntu 14.04 LTS version.
+	\subsection{Tests \& results}
 	\label{Test cases}
-	A first test on the repeatability of our approach is done by assessing its performance and efficiency on different test case files, each composed of several total number of positioners with unique initial configurations.\\
-	The results of both methods,i.e. using the decentralized navigation function algorithm with and without our finite state machine approach, are compared by measuring the number of positioners successfuly converging to their targets and the time necessary for the pre-computation of their movements.\\
-	Indirectly, the improvement of the positioner convergence results from this test is also a good indication on how well our finite state machine methodology takes into account priority and deadlock solving using . \\\\
 	
-	\subsubsection{Priority and Repeatability: convergence and time performance}
-	We run our algorithm on 8 different test files, where each represents one specific initial configuration of thousand of positioners, with their respective targets. Though all their pre-assigned priorities for each positioner are the same, the convergence success with our method also demonstrate the robustness of our algorithm when dealing with positioners having the same priorities, and hence indirectly having different order of priorities due to the mechanism of the fifth state of the finite machine. \\
+	Repeatability tests are done in order to assess the performance and efficiency of our approach. For this purpose, we compare the results obtained from our finite state machine with the ones using only the decentralized navigation function algorithm. In the latter case, pre-assigned priorities are not taken into account as they are no mechanism to do so.\\\\
+	In addition to all the figures seen so far which are real working examples of different priorities positioner interaction, the goal is also to assess the robustness of the algorithm to coordinate a whole system of positioners with a hierarchy of importance.
 	
+	\subsubsection{Repeatability: convergence and time performance}
+	We run our algorithm on 8 different test files. Each represents one specific and unique initial configuration of thousand of positioners with their respective targets. All positioners have the same pre-assigned priority value.\\\\
 	Each configuration file is used to evaluate the following performances: 
 	\begin{itemize}
 		\item Number of positioners successfully converging to their targets.
 		\item Time in seconds necessary for the pre-computation of their movements.
 	\end{itemize}
-	The goal is not only to verify if our algorithm is repeatable over different configurations of our system but also if it is acceptable to use such an approach in real time by evaluating the pre-computation time.\\
-	To this end, for each configuration test files, the total number of around thousand of positioners are partitioned into a 12 subset of total positioners, on which we run our algorithm.
-	In order to assess how the positioners convergence rate improved, we compare the result of our algorithm with the one collected by only running the decentralized navigation function without our finite state machine, and thus without taking into account any priorities pre-assigned to each positioners.
-
+	The goal is not only to verify if the performance of our algorithm is repeatable over different configurations of our system but also if it is acceptable to use it in real time.\\
+	To this end, for each configuration test file, the total number of around a thousand of positioners is partitioned into 12 subsets of sub-total positioners, on which we run our algorithm.
+	
 	\begin{figure}[H]
 		\begin{minipage}{8.7cm}
 			\begin{minipage}[t]{4.3cm}
@@ -584,8 +583,8 @@
 			\end{minipage}
 		\end{figure}					
 	For all the configuration test, the general behavior of the system remains similar: when using our finite state machine, an improvement of positioners convergence from 60-70\% to 80-95\% can be observed for each test.\\
-	 However, as we expected, the computation time became bigger, growing into a quasilinear order, since we added an another layer of computation. With better optimization such as parallel computation and/or more performant hardwares, this burden can be compensated.
-	 
+	 However, as we expected, the computation time became bigger, growing into a quasilinear order, since we added an another layer of computation. With better optimization such as parallel computation and/or more performant hardwares, this burden can be compensated.\\\\
+	 Though all their pre-assigned priorities to each positioner are the same value, the result of convergence improvement with our method also demonstrates indirectly the robustness of our algorithm to take into account different priorities. Due to the mechanism of the fifth state of the finite machine, interactions of positioners with similar priorities also involves all the other states as their priorities become different. \\\\
 %	\subsubsection{Special situations}
 %	Test cases illustrated in [\citenum{TestCaseMoon}] and showcasing problematic positioners configurations, ie specifically designed situations where two or more positioners are supposed to fail reaching their targets with just using the decentralized navigation function due to deadlocks, are used to test our algorithm.\\
 %	Unlike the test of repeatability, the goal here is to  
@@ -593,13 +592,14 @@
 	
 	\section{CONCLUSION}
 	\label{CONCLUSION}
-	In the context of MOONS project, an approach with a finite state machine on top of a decentralized navigation function from the potential field family is used to enable better coordination of a multi-objects positioner inside a confined space. With its different states, it takes into account pre-assigned priority to each positioner, creating a hierarchy of importance where positioners with the highest priority have more probability to reach their targets than lower priority ones, enabling a better coordination of the positioners movements and also the possibility to better manage deadlocks situations. An improvement from  60-70\% to 80-95\% of total positioner converging to their target is observed from repeatability tests, results taken from comparing our approach of adding a finite state machine layer with the one using only the decentralized navigation function.\\
-	Since we added another layer of complexity to an already existing algorithm, the precomputation time of each positioner trajectory is slower, becoming quasilinear. One possible work can be to optimize either the code by finding the right optimization method such as parallel computing or using more performant hardware. Furthermore, since our approach has no proof of being complete, more research on the optimization of the algorithm for a better positioner convergence or even a proof for completness can be consider.\\
-	Extending this approach to take into account other features, such as in the project SLOAN-SDSS5 for selecting which (UV, visible or IR) optical fibers to use withing one positioner, can be a subject which astronomers are very interested since not all objects in the universe are well observed in the same range of optic spectrum.
+	In the context of the project MOONS and as an extension of [\citenum{MakaremMoons}], an approach with a finite state machine is built on top of a decentralized navigation function from the potential field family. It enables better coordination of a multi-objects positioners inside a confined space. With its different states, it takes into account different priorities pre-assigned to each positioner, creating a hierarchy of importance where positioners with higher priority have more probabilities to reach their targets. Along with the possibility to manage deadlocks, it enables a better convergence of the system:
+	 an improvement from  60-70\% to 80-95\% of total positioners converging to their targets is observed from repeatability tests. The results are obtained from comparing our approach with the one using only the decentralized navigation function. Furthermore, the algorithm is scalable to other system configuration than MOONS as it doesn't depend on the positioner's geometry.\\
+	Since we added another layer of complexity to an already existing algorithm, the pre-computation time of each positioner trajectory is slower, becoming quasilinear. One possible work can be to optimize the software by either finding the right optimization method such as parallel computing or using more performant hardwares. Moreover, since our approach has no proof of completeness, more research on the optimization of the algorithm for a better positioner convergence can be consider.\\
+	Extending this approach to take into account other features, such as for the project SLOAN-SDSS5 that needs to select which (UV, visible or IR) optical fibers to use within one positioner is also a possibility. It is a subject which is particularly interesting for astronomers since not all objects in the universe are well observed in the same range of the optic spectrum.
 	
 	\acknowledgments % equivalent to \section*{ACKNOWLEDGMENTS}       
 	
-	I would like to thank my supervisor Dr. Denis Gillet and also Dr. Mohammed Bouri and prof. Jean-Paul Kneib, without whom this paper and project about priority coordination would not have been possible. A lot of thanks to Ezequiel Gonzazel for our brainstorming sessions and also for the friendly members of the REACT Lab for making my work environment a nice and productive place. 
+	I would like to thank my supervisor Dr. Denis Gillet for his patience and trust in me, and also to Dr. Mohammed Bouri and prof. Jean-Paul Kneib for their support. A lot of thanks to Ezequiel Gonzalez for our brainstorming sessions and to Dr. Laleh Makarem for reviewing my work and her advices, without whom this paper and algorithm wouldn't have been possible; and finally, to all the friendly members of the REACT Lab who made my working place a nice and productive environment. 
 	
 
 % References
