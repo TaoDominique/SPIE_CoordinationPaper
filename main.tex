@@ -156,14 +156,14 @@
 	In order to solve this problem and also for a better coordination of the system, we use the principle of memorization by introducing two new states: 
 	\begin{itemize}
 		\item "MemPr":  \\
-		Initialized at 0 for a positioner, it is used to memorize either the pre-assigned priority or the MemPr of its neighbour positioner which was the one that changed its  states.\\
+		Initialized at 0 for a positioner, it is used to memorize either the pre-assigned priority or the MemPr of its neighbour positioner which changed its  states.\\
 		\item "MemId": \\
-		Initialized at 0 for a positioner, it is used to memorize only the identity of the neighbour positioner which was the one that changed its states.
+		Initialized at 0 for a positioner, it is used to memorize only the identity of its neighbour positioner which changed its states.
 	\end{itemize}\\
-	  With this information and in a similar situation than in figure \ref{ID_PR}, one OFF positioner C, whose states has been changed by an ON neighbour positioner A due to its higher priority, is now able to influence its other ON neighbours states if their pre-assigned priorities are smaller than "MemPr" of C. The positioner A which was the one that changed the state of positioner C has its pre-assigned priority memorized by C. It enables the positioner A, through C, to influence other positioners whose movements are opposing its one, allowing its movement to its target with less resistance.\\
+	  With this information and in a similar situation than in figure \ref{ID_PR}, one OFF positioner C, whose states has been changed by an ON neighbour positioner A due to its higher priority, is now able to influence its other ON neighbours states if their pre-assigned priorities are smaller than "MemPr" of C. The positioner A which changed the state of positioner C has its pre-assigned priority memorized by C. It enables the positioner A, through C, to influence other positioners whose movements are opposing its one, allowing to have its convergence to its target with less resistance.\\
 	 We define this process as a "chain reaction": one OFF positioner being able to change the states of its neighbour positioner that is not the one that originally influenced it. \\
 	 
-	 To understand this principle and the assignments of values for "MemPr"  and "MemId", the pseudo-code of algorithm \ref{First_algo} gives a concise overview on how all the states seen so far for an considered positioner, called agent positioner, are changing when interacting with one of its neighbour. A visual step-by-step example following the algorithm \ref{First_algo} is illustrated in figure \ref{ID_PR}. \\\\
+	 To understand this principle and the assignments of values for "MemPr"  and "MemId", the pseudo-code of algorithm \ref{First_algo} gives a concise overview on how all the states seen so far for an considered positioner, called agent positioner, are changed when interacting with one of its neighbour. A visual step-by-step example following the algorithm \ref{First_algo} is illustrated in figure \ref{ID_PR}. \\\\
 	 Furthermore, these rules are only valid if the agent positioner has not yet arrived to its target and is inside the $Z_{ON/OFF}$ zone of its considered neighbour.  
 	 A condition related to another positioner state, the fourth one, that will be fully understand, as well as the whole condition in line \ref{arr_condition_line}, in the next sub-chapter \ref{sub_chap_fourth_state}.\\\\
  	\begin{figure}[H]
@@ -181,8 +181,8 @@
  			\includegraphics[scale=0.3]{images/ID_PR2.jpg}
  			\label{ID_PR2}
  		\end{minipage}
- 		\caption{\centering Positioner chain reaction using MemId and MemPr states, obeying algorithm \ref{First_algo} for interaction\\
- 			(left image) Positioner A with the biggest priority influences its neighbour positioner C which remembers the priority and id information of A when becoming OFF as shown in the red rectangle; (middle image) Even if positioner C priority is smaller than B, because C is OFF, B has to look on the information of C to find how that the movement of the positioner that influenced C is more important due to its priority, B becomes OFF and carry on the information that C has;(right image) Once positioner A is out of the zone $Z_{ON/OFF}$ with C, deep first search is used to reset the information carried by the chain reaction }
+ 		\caption{\centering Positioner chain reaction using MemId and MemPr states, obeying algorithm \ref{First_algo} for interaction:\\
+ 			(left image) Positioner A with the biggest priority influences its neighbour positioner C which remembers the priority and id information of A when becoming OFF; (middle image) Even if positioner C pre-assigned priority is smaller than B one, because C is OFF, B has to look on the memorized information of C: B having a smaller pre-assigned priority, it becomes OFF and carry on the memorized priority of C; (right image) Once positioner A is out of the zone $Z_{ON/OFF}$ of C, deep first search is used to reset all the states of all the positioners that are in the chain reaction because of A }
  		\label{ID_PR}
  	\end{figure}
 	   The four main conditions in lines \ref{condition1}, \ref{condition2}, \ref{condition3}, \ref{condition4}, in the algorithm \ref{First_algo} correspond to all the possible interactions of two positioners based on their ON/OFF states. It shows how the neighbour positioner states is compared and is changing the agent positioner ones. Only the agent positioner states are modified. The reason is simply because algorithm \ref{First_algo} is applied to each positioner with respect to each of its neighours in the system.\\
@@ -246,8 +246,8 @@
 		\BlankLine
 	\end{algorithm}
 	
-	 The lifetime of the memorization states, "MemId" and "MemPr", is bound to its agent positioner being OFF inside the $Z_{ON/OFF}$ zone of the neighbour positioner that changed its states. Once outside, its states are re-initialized at their initial values, i.e. the first state at ON and the memorization states at 0. The states of all the other positioners that were influenced by the re-initiliazed agent positioner through the chain reaction process are also re-initialized. To do so, the deep first search algorithm can be used with the "MemId" information to recognize which positioner is in the chain reaction.\\\\
-	When the algorithm \ref{First_algo} is reapplied again on the same two positioners, the agent positioner inside the $Z_{ON/OFF}$ zone of its neighbour positioner won't enter any of the conditions mentionned above since its states were already changed previously by this same neighbour. The condition in line \ref{conditionSame} is added to ouptut that the agent positioner is still being affected by the same neighbour positioner, in order to avoid any complicated behaviors of the system due to reinitialization.  
+	 The lifetime of the memorization states, "MemId" and "MemPr", is bound to its agent positioner being OFF inside the $Z_{ON/OFF}$ zone of the neighbour positioner that changed its states. Once outside, its states are re-initialized at their initial values, i.e. the first state at ON and the memorization states at 0. The states of all the other positioners that were influenced by the re-initiliazed agent positioner through the chain reaction process are also re-initialized. To do so, deep first search algorithm can be used with the "MemId" information to recognize which positioner is in the chain reaction.\\\\
+	When the algorithm \ref{First_algo} is reapplied again on the same two positioners, the agent positioner inside the $Z_{ON/OFF}$ zone of its neighbour positioner won't enter any of the conditions mentionned above since its states were already changed previously by this same neighbour. The condition in line \ref{conditionSame} is added to ouptut that the agent positioner is still being affected by the same neighbour positioner, in order to avoid any complicated behaviors of the system.  
 
 	
 	\subsubsection{Fourth state: Arrived}

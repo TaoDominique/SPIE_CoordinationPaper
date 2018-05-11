@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.9.26)  12 MAY 2018 00:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.9.26)  12 MAY 2018 01:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -813,7 +813,7 @@ Overfull \hbox (22.87613pt too wide) in paragraph at lines 181--183
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.185 ...formation carried by the chain reaction }
+l.185 ... are in the chain reaction because of A }
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -827,7 +827,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.185 ...formation carried by the chain reaction }
+l.185 ... are in the chain reaction because of A }
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -840,7 +840,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.185 ...formation carried by the chain reaction }
+l.185 ... are in the chain reaction because of A }
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1934,7 +1934,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 619.
 Here is how much of TeX's memory you used:
  9013 strings out of 493304
  132771 string characters out of 6139871
- 282906 words of memory out of 5000000
+ 282879 words of memory out of 5000000
  12253 multiletter control sequences out of 15000+600000
  13576 words of font info for 53 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1957,7 +1957,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (13 pages, 1281307 bytes).
+Output written on main.pdf (13 pages, 1281180 bytes).
 PDF statistics:
  343 PDF objects out of 1000 (max. 8388607)
  275 compressed objects within 3 object streams
