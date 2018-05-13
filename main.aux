@@ -33,14 +33,14 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}System representation}{302}{subsection.2.1}}
 \newlabel{Finite-state machine}{{2.1}{302}{System representation}{subsection.2.1}{}}
 \citation{MakaremMoons}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Variables representation of the system}}{303}{figure.4}}
-\newlabel{sys_representation}{{4}{303}{Variables representation of the system}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Representation of the variables in the system}}{303}{figure.4}}
+\newlabel{sys_representation}{{4}{303}{Representation of the variables in the system}{figure.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Finite-state machine}{303}{subsection.2.2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}First State: ON/OFF}{303}{subsubsection.2.2.1}}
 \newlabel{first_state_chap}{{2.2.1}{303}{First State: ON/OFF}{subsubsection.2.2.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{304}{figure.5}}
-\newlabel{key}{{5}{304}{\centering Principle of ON/OFF state (left to right image): \\ (left image) Positioner B inside $Z_{ON/OFF}$ of positioner A doesn't have any attrative force and is subject to repulsive force from positioner A, making it going to the opposite direction of its target B; (right image) The same positioner B, once repulsed outside of the zone $Z_{ON/OFF}$ by positioner A itself, regains its attractive force\\}{figure.5}{}}
-\newlabel{First_state}{{5}{304}{\centering Principle of ON/OFF state (left to right image): \\ (left image) Positioner B inside $Z_{ON/OFF}$ of positioner A doesn't have any attrative force and is subject to repulsive force from positioner A, making it going to the opposite direction of its target B; (right image) The same positioner B, once repulsed outside of the zone $Z_{ON/OFF}$ by positioner A itself, regains its attractive force\\}{figure.5}{}}
+\newlabel{key}{{5}{304}{\centering Principle of ON/OFF state (left to right image): \\ (left image) Positioner B inside $Z_{ON/OFF}$ of positioner A doesn't have any attractive force and is subject to repulsive force from positioner A, making it going to the opposite direction of its target B; (right image) The same positioner B, once repulsed outside of the zone $Z_{ON/OFF}$ by positioner A, regains its attractive force\\}{figure.5}{}}
+\newlabel{First_state}{{5}{304}{\centering Principle of ON/OFF state (left to right image): \\ (left image) Positioner B inside $Z_{ON/OFF}$ of positioner A doesn't have any attractive force and is subject to repulsive force from positioner A, making it going to the opposite direction of its target B; (right image) The same positioner B, once repulsed outside of the zone $Z_{ON/OFF}$ by positioner A, regains its attractive force\\}{figure.5}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Second \& third state: ID and Priority memorization}{304}{subsubsection.2.2.2}}
 \newlabel{ID_PR0}{{2.2.2}{305}{Second \& third state: ID and Priority memorization}{subsubsection.2.2.2}{}}
 \newlabel{ID_PR1}{{2.2.2}{305}{Second \& third state: ID and Priority memorization}{subsubsection.2.2.2}{}}
@@ -63,62 +63,73 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Fourth state: Arrived}{307}{subsubsection.2.2.3}}
 \newlabel{sub_chap_fourth_state}{{2.2.3}{307}{Fourth state: Arrived}{subsubsection.2.2.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{307}{figure.7}}
-\newlabel{fourth_state}{{7}{307}{\centering Principle of fourth state "Arr":\\ Problematic configuration with target inside a higher priority "already-converged" positione zones $Z_{ON/OFF}$ and $Z_{F_{r}}$}{figure.7}{}}
+\newlabel{fourth_state}{{7}{307}{\centering Principle of fourth state "Arr":\\ Problematic configuration with target inside a higher priority "already-converged" positioner zones $Z_{ON/OFF}$ and $Z_{F_{r}}$}{figure.7}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Fifth state: Deadlock and pseudo-priority}{307}{subsubsection.2.2.4}}
 \newlabel{sub_chapter_fifth_state}{{2.2.4}{307}{Fifth state: Deadlock and pseudo-priority}{subsubsection.2.2.4}{}}
 \@writefile{toc}{\contentsline {paragraph}{State \& Principle}{308}{section*.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{309}{figure.8}}
-\newlabel{5thState}{{8}{309}{\centering Principle of 5th state, "lock\_sm", and pseudo-priority, "psPr" :\\ With the same priority, inside their zone "$Z_{ON/OFF}$" and in "lock\_sm" situation, the distance from positioner B end-effector to its target being smaller compared to the end-effector C to target C, the positioner B becomes more important symbolised by its pseudo-priority, "PsPr", being bigger and both fifth state equal to B}{figure.8}{}}
+\newlabel{5thState}{{8}{309}{\centering Principle of 5th state, "lock\_sm", and pseudo-priority, "psPr" :\\ With the same priority, inside their zone "$Z_{ON/OFF}$" and in "lock\_sm" situation, the distance from positioner B end-effector to its target is smaller compared to one from end-effector C to target C, the positioner B becomes more important symbolised by its pseudo-priority, "PsPr", being bigger and both fifth state equal to the ID of B}{figure.8}{}}
 \@writefile{toc}{\contentsline {paragraph}{Values \& interactions}{309}{section*.3}}
-\@writefile{toc}{\contentsline {paragraph}{Deadlock "lock\_sm" localization}{309}{section*.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{310}{figure.9}}
-\newlabel{projection}{{9}{310}{\centering Point of view in 1D configuration:\\ Projection of agent and neighbour target on the line created from closest part of both positioners}{figure.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{310}{figure.10}}
-\newlabel{look_UpTableLogic}{{10}{310}{\centering Configuration examples of look up table logic:\\ On the left column, positioner A and B movements are not opposing each other nor are the positioner on the way of the other movement; On the right column, the positioner B ending up at its target will hinder the movement of positioner A to its target, being in between them}{figure.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Simulation \& RESULTS}{311}{section.3}}
-\newlabel{RESULTS}{{3}{311}{Simulation \& RESULTS}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Software \& Hardware}{311}{subsection.3.1}}
-\newlabel{Software Hardware}{{3.1}{311}{Software \& Hardware}{subsection.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Tests \& results}{311}{subsection.3.2}}
-\newlabel{Test cases}{{3.2}{311}{Tests \& results}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Repeatability: convergence and time performance}{311}{subsubsection.3.2.1}}
-\newlabel{configuration1_conv}{{3.2.1}{311}{Repeatability: convergence and time performance}{subsubsection.3.2.1}{}}
-\newlabel{configuration1_time}{{3.2.1}{311}{Repeatability: convergence and time performance}{subsubsection.3.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{311}{figure.11}}
-\newlabel{configuration1_result}{{11}{311}{\centering Configuration 1:\\ Convergence success and computation time data \begin {itemize} \item With FSM: Decentralized navigation function with finite state machine \item Without FSM: Decentralized navigation function without finite state machine \end {itemize} \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 250 & 481 & 773 & 1006\\ \hline Conv. & With FSM & 52 & 105 & 228 & 434 & 675 & 889 \\ \cline {2-8} & Without FSM & 41 & 88 & 176 & 358 & 577 & 747 \\ \hline Time\\(sec) & With FSM & 13.8 & 30.9 & 84 & 169.7 & 265.2 & 360.1 \\ \cline {2-8} & Without FSM & 3.5 & 8.6 & 21.4 & 43.7 & 74.5 & 136.1 \\ \hline \end {tabular}}{figure.11}{}}
-\newlabel{configuration1_conv}{{3.2.1}{311}{Repeatability: convergence and time performance}{figure.11}{}}
-\newlabel{configuration1_time}{{3.2.1}{311}{Repeatability: convergence and time performance}{figure.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{311}{figure.12}}
-\newlabel{configuration2_result}{{12}{311}{\centering Configuration 2:\\ Convergence success and computation time data \begin {itemize} \item With FSM: Decentralized navigation function with finite state machine \item Without FSM: Decentralized navigation function without finite state machine \end {itemize} \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 251 & 482 & 779 & 1035\\ \hline Conv. & With FSM & 52 & 103 & 231 & 415 & 679 & 892 \\ \cline {2-8} & Without FSM & 45 & 91 & 189 & 350 & 555 & 750 \\ \hline Time\\(sec) & With FSM & 11.8 & 31 & 81.2 & 159.2 & 291.7 & 369.7 \\ \cline {2-8} & Without FSM & 3.8 & 9.6 & 21.6 & 44 & 69.9 & 134.1 \\ \hline \end {tabular}}{figure.12}{}}
-\newlabel{configuration1_conv}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.12}{}}
-\newlabel{configuration1_time}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.13}}
-\newlabel{configuration3_result}{{13}{312}{\centering Configuration 3:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 251 & 487 & 770 & 979\\ \hline Conv. & With FSM & 53 & 101 & 217 & 413 & 665 & 864 \\ \cline {2-8} & Without FSM & 41 & 86 & 181 & 358 & 554 & 704 \\ \hline Time\\(sec) & With FSM & 14 & 32.3 & 79.9 & 155.1 & 267.2 & 425.2 \\ \cline {2-8} & Without FSM & 3.7 & 9.1 & 21 & 45.2 & 79.2 & 143.6 \\ \hline \end {tabular}}{figure.13}{}}
-\newlabel{configuration1_conv}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.13}{}}
-\newlabel{configuration1_time}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.14}}
-\newlabel{configuration4_result}{{14}{312}{\centering Configuration 4:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 251 & 485 & 786 & 1039\\ \hline Conv. & With FSM & 48 & 103 & 222 & 436 & 698 & 914 \\ \cline {2-8} & Without FSM & 35 & 81 & 172 & 339 & 553 & 742 \\ \hline Time\\(sec) & With FSM & 13.4 & 30.8 & 79.6 & 170.4 & 274.1 & 352.1 \\ \cline {2-8} & Without FSM & 3.8 & 9.3 & 23.9 & 47.3 & 89.5 & 144.9 \\ \hline \end {tabular}}{figure.14}{}}
-\newlabel{configuration1_conv}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.14}{}}
-\newlabel{configuration1_time}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.15}}
-\newlabel{configuration5_result}{{15}{312}{\centering Configuration 5:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 52 & 111 & 244 & 478 & 783 & 1039\\ \hline Conv. & With FSM & 50 & 105 & 219 & 421 & 689 & 931 \\ \cline {2-8} & Without FSM & 44 & 89 & 186 & 349 & 555 & 754 \\ \hline Time\\(sec) & With FSM & 12.9 & 32.7 & 91.8 & 155.9 & 267.8 & 429.7 \\ \cline {2-8} & Without FSM & 3.8 & 8.7 & 24.1 & 47.2 & 93.3 & 103.4 \\ \hline \end {tabular}}{figure.15}{}}
-\newlabel{configuration1_conv}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.15}{}}
-\newlabel{configuration1_time}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.16}}
-\newlabel{configuration6_result}{{16}{312}{\centering Configuration 6:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 249 & 482 & 768 & 1005\\ \hline Conv. & With FSM & 54 & 110 & 225 & 415 & 651 & 973 \\ \cline {2-8} & Without FSM & 47 & 90 & 187 & 356 & 561 & 734 \\ \hline Time\\(sec) & With FSM & 12 & 28.8 & 76.3 & 158.6 & 275.9 & 364.2 \\ \cline {2-8} & Without FSM & 3.9 & 8.6 & 22.6 & 46.4 & 79.8 & 101.2 \\ \hline \end {tabular}}{figure.16}{}}
-\newlabel{configuration1_conv}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.16}{}}
-\newlabel{configuration1_time}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.17}}
-\newlabel{configuration7_result}{{17}{312}{\centering Configuration 7:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 52 & 106 & 234 & 449 & 730 & 980\\ \hline Conv. & With FSM & 50 & 90 & 196 & 382 & 621 & 844 \\ \cline {2-8} & Without FSM & 40 & 72 & 155 & 300 & 503 & 691 \\ \hline Time\\(sec) & With FSM & 14.4 & 36.2 & 89 & 172.8 & 315.8 & 383 \\ \cline {2-8} & Without FSM & 3.9 & 8.6 & 21.1 & 46.8 & 76.5 & 102.1 \\ \hline \end {tabular}}{figure.17}{}}
-\newlabel{configuration1_conv}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.17}{}}
-\newlabel{configuration1_time}{{3.2.1}{312}{Repeatability: convergence and time performance}{figure.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{312}{figure.18}}
-\newlabel{configuration8_result}{{18}{312}{\centering Configuration 8:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 249 & 471 & 750 & 1003\\ \hline Conv. & With FSM & 52 & 103 & 221 & 401 & 630 & 861 \\ \cline {2-8} & Without FSM & 40 & 86 & 179 & 342 & 525 & 723 \\ \hline Time\\(sec) & With FSM & 12.3 & 29.2 & 78.2 & 161.9 & 301.2 & 399.5 \\ \cline {2-8} & Without FSM & 4 & 9.2 & 23.0 & 42.7 & 78.3 & 99.5 \\ \hline \end {tabular}}{figure.18}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Completion of the condition in line \ref  {condition3} in algorithm \ref  {First_algo}}}{310}{algorithm.2}}
+\newlabel{Second_algo}{{2}{310}{Values \& interactions}{algorithm.2}{}}
+\newlabel{Alg2condition_line}{{1}{310}{Values \& interactions}{AlgoLine.0.1}{}}
+\newlabel{Alg2condition1}{{2}{310}{Values \& interactions}{AlgoLine.0.2}{}}
+\newlabel{Alg2comparison1}{{3}{310}{Values \& interactions}{AlgoLine.0.3}{}}
+\newlabel{Alg2condition2}{{5}{310}{Values \& interactions}{AlgoLine.0.5}{}}
+\newlabel{Alg2comparison2}{{6}{310}{Values \& interactions}{AlgoLine.0.6}{}}
+\newlabel{Alg2condition3}{{8}{310}{Values \& interactions}{AlgoLine.0.8}{}}
+\newlabel{Alg2comparison3}{{9}{310}{Values \& interactions}{AlgoLine.0.9}{}}
+\newlabel{Alg2condition4}{{11}{310}{Values \& interactions}{AlgoLine.0.11}{}}
+\newlabel{Alg2comparison4}{{12}{310}{Values \& interactions}{AlgoLine.0.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Deadlock "lock\_sm" localization}{311}{section*.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{311}{figure.9}}
+\newlabel{projection}{{9}{311}{\centering Point of view in 1D configuration:\\ Projection of agent and neighbour target on the line created from closest part of both positioners}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \let \GenericError  {               }{LaTeX Error: There's no line here to end}{See the LaTeX manual or LaTeX Companion for explanation.}{Your command was ignored.\MessageBreak Type  I <command> <return>  to replace it with another command,\MessageBreak or  <return>  to continue without it.}\par \let \reserved@d = *\def \par }}{312}{figure.10}}
+\newlabel{look_UpTableLogic}{{10}{312}{\centering Configuration examples of look up table logic:\\ On the left column, positioner A and B movements are hindering each other; On the right column, the positioner B ending up at its target hinders the movement of positioner A to its target, being in between them}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Simulation \& RESULTS}{312}{section.3}}
+\newlabel{RESULTS}{{3}{312}{Simulation \& RESULTS}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Software \& Hardware}{312}{subsection.3.1}}
+\newlabel{Software Hardware}{{3.1}{312}{Software \& Hardware}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Tests \& results}{312}{subsection.3.2}}
+\newlabel{Test cases}{{3.2}{312}{Tests \& results}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Repeatability: convergence and time performance}{312}{subsubsection.3.2.1}}
+\newlabel{configuration1_conv}{{3.2.1}{313}{Repeatability: convergence and time performance}{subsubsection.3.2.1}{}}
+\newlabel{configuration1_time}{{3.2.1}{313}{Repeatability: convergence and time performance}{subsubsection.3.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{313}{figure.11}}
+\newlabel{configuration1_result}{{11}{313}{\centering Configuration 1:\\ Convergence success and computation time data \begin {itemize} \item With FSM: Decentralized navigation function with finite state machine \item Without FSM: Decentralized navigation function without finite state machine \end {itemize} \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 250 & 481 & 773 & 1006\\ \hline Conv. & With FSM & 52 & 105 & 228 & 434 & 675 & 889 \\ \cline {2-8} & Without FSM & 41 & 88 & 176 & 358 & 577 & 747 \\ \hline Time\\(sec) & With FSM & 13.8 & 30.9 & 84 & 169.7 & 265.2 & 360.1 \\ \cline {2-8} & Without FSM & 3.5 & 8.6 & 21.4 & 43.7 & 74.5 & 136.1 \\ \hline \end {tabular}}{figure.11}{}}
+\newlabel{configuration1_conv}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.11}{}}
+\newlabel{configuration1_time}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{313}{figure.12}}
+\newlabel{configuration2_result}{{12}{313}{\centering Configuration 2:\\ Convergence success and computation time data \begin {itemize} \item With FSM: Decentralized navigation function with finite state machine \item Without FSM: Decentralized navigation function without finite state machine \end {itemize} \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 251 & 482 & 779 & 1035\\ \hline Conv. & With FSM & 52 & 103 & 231 & 415 & 679 & 892 \\ \cline {2-8} & Without FSM & 45 & 91 & 189 & 350 & 555 & 750 \\ \hline Time\\(sec) & With FSM & 11.8 & 31 & 81.2 & 159.2 & 291.7 & 369.7 \\ \cline {2-8} & Without FSM & 3.8 & 9.6 & 21.6 & 44 & 69.9 & 134.1 \\ \hline \end {tabular}}{figure.12}{}}
+\newlabel{configuration1_conv}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.12}{}}
+\newlabel{configuration1_time}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{313}{figure.13}}
+\newlabel{configuration3_result}{{13}{313}{\centering Configuration 3:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 251 & 487 & 770 & 979\\ \hline Conv. & With FSM & 53 & 101 & 217 & 413 & 665 & 864 \\ \cline {2-8} & Without FSM & 41 & 86 & 181 & 358 & 554 & 704 \\ \hline Time\\(sec) & With FSM & 14 & 32.3 & 79.9 & 155.1 & 267.2 & 425.2 \\ \cline {2-8} & Without FSM & 3.7 & 9.1 & 21 & 45.2 & 79.2 & 143.6 \\ \hline \end {tabular}}{figure.13}{}}
+\newlabel{configuration1_conv}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.13}{}}
+\newlabel{configuration1_time}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{313}{figure.14}}
+\newlabel{configuration4_result}{{14}{313}{\centering Configuration 4:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 251 & 485 & 786 & 1039\\ \hline Conv. & With FSM & 48 & 103 & 222 & 436 & 698 & 914 \\ \cline {2-8} & Without FSM & 35 & 81 & 172 & 339 & 553 & 742 \\ \hline Time\\(sec) & With FSM & 13.4 & 30.8 & 79.6 & 170.4 & 274.1 & 352.1 \\ \cline {2-8} & Without FSM & 3.8 & 9.3 & 23.9 & 47.3 & 89.5 & 144.9 \\ \hline \end {tabular}}{figure.14}{}}
+\newlabel{configuration1_conv}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.14}{}}
+\newlabel{configuration1_time}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{313}{figure.15}}
+\newlabel{configuration5_result}{{15}{313}{\centering Configuration 5:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 52 & 111 & 244 & 478 & 783 & 1039\\ \hline Conv. & With FSM & 50 & 105 & 219 & 421 & 689 & 931 \\ \cline {2-8} & Without FSM & 44 & 89 & 186 & 349 & 555 & 754 \\ \hline Time\\(sec) & With FSM & 12.9 & 32.7 & 91.8 & 155.9 & 267.8 & 429.7 \\ \cline {2-8} & Without FSM & 3.8 & 8.7 & 24.1 & 47.2 & 93.3 & 103.4 \\ \hline \end {tabular}}{figure.15}{}}
+\newlabel{configuration1_conv}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.15}{}}
+\newlabel{configuration1_time}{{3.2.1}{313}{Repeatability: convergence and time performance}{figure.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{313}{figure.16}}
+\newlabel{configuration6_result}{{16}{313}{\centering Configuration 6:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 249 & 482 & 768 & 1005\\ \hline Conv. & With FSM & 54 & 110 & 225 & 415 & 651 & 973 \\ \cline {2-8} & Without FSM & 47 & 90 & 187 & 356 & 561 & 734 \\ \hline Time\\(sec) & With FSM & 12 & 28.8 & 76.3 & 158.6 & 275.9 & 364.2 \\ \cline {2-8} & Without FSM & 3.9 & 8.6 & 22.6 & 46.4 & 79.8 & 101.2 \\ \hline \end {tabular}}{figure.16}{}}
 \citation{MakaremMoons}
+\newlabel{configuration1_conv}{{3.2.1}{314}{Repeatability: convergence and time performance}{figure.16}{}}
+\newlabel{configuration1_time}{{3.2.1}{314}{Repeatability: convergence and time performance}{figure.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{314}{figure.17}}
+\newlabel{configuration7_result}{{17}{314}{\centering Configuration 7:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 52 & 106 & 234 & 449 & 730 & 980\\ \hline Conv. & With FSM & 50 & 90 & 196 & 382 & 621 & 844 \\ \cline {2-8} & Without FSM & 40 & 72 & 155 & 300 & 503 & 691 \\ \hline Time\\(sec) & With FSM & 14.4 & 36.2 & 89 & 172.8 & 315.8 & 383 \\ \cline {2-8} & Without FSM & 3.9 & 8.6 & 21.1 & 46.8 & 76.5 & 102.1 \\ \hline \end {tabular}}{figure.17}{}}
+\newlabel{configuration1_conv}{{3.2.1}{314}{Repeatability: convergence and time performance}{figure.17}{}}
+\newlabel{configuration1_time}{{3.2.1}{314}{Repeatability: convergence and time performance}{figure.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces \let \let \reserved@e \relax \let \reserved@f \relax \let \reserved@d = *\def \par }}{314}{figure.18}}
+\newlabel{configuration8_result}{{18}{314}{\centering Configuration 8:\\ Convergence success and computation time data \tiny \begin {tabular}{|l|l|l|l|l|l|l|l|} \hline \multicolumn {2}{|l|}{Total Positioners} & 54 & 114 & 249 & 471 & 750 & 1003\\ \hline Conv. & With FSM & 52 & 103 & 221 & 401 & 630 & 861 \\ \cline {2-8} & Without FSM & 40 & 86 & 179 & 342 & 525 & 723 \\ \hline Time\\(sec) & With FSM & 12.3 & 29.2 & 78.2 & 161.9 & 301.2 & 399.5 \\ \cline {2-8} & Without FSM & 4 & 9.2 & 23.0 & 42.7 & 78.3 & 99.5 \\ \hline \end {tabular}}{figure.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}CONCLUSION}{314}{section.4}}
+\newlabel{CONCLUSION}{{4}{314}{CONCLUSION}{section.4}{}}
 \bibdata{report}
 \bibcite{MakaremDESIConference}{1}
 \bibcite{makarem2015decentralized}{2}
 \bibcite{MakaremMoons}{3}
 \bibstyle{spiebib}
-\@writefile{toc}{\contentsline {section}{\numberline {4}CONCLUSION}{313}{section.4}}
-\newlabel{CONCLUSION}{{4}{313}{CONCLUSION}{section.4}{}}
