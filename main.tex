@@ -40,21 +40,19 @@
 	\maketitle
 	
 	\begin{abstract}
-		Projects such as "The Dark Energy Spectroscopic Instrument" (DESI) or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS) are developping spectographs, composed with more than thousand of optical fibers in a confined hexagonal focal plane, to study the evolution of the universe. Such systems make real time observation possible as each optical fiber is moved simultaneously to their pre-assigned target by a 2-arm positioner within an short interval of time to monitor a specific astronomical object. Moreover, astronomers prioritize the observation of some objects over those that hold less information, creating a hierarchy of importances or priorities. In a non-complete scenario where not all the positioners can reach their targets, being able to ensure the observation of the important ones is a desirable feature. \\
-		In previous works, a decentralized navigation function from the family of potential field was used for collision-free coordination. While it is complete for DESI [\citenum{MakaremDESIConference,makarem2015decentralized}], it is different for MOONS [\citenum{MakaremMoons}] as the second arm of their positioners is two time the length of its first one. Covering a larger working space, they are prone to deadlocks, a situation where two or more positioners are blocked by each other and so unable to reach their targets.\\
-		In this paper and in the framework of MOONS project, as an extension of the decentralized navigation function, we present our new approach to integrate pre-assigned priority to positioners in order to coordinate them and to solve deadlocks situations. For this purpose, a finite-state machine combined with distance-based heuristics is used to regulate their movements. While their states dictate their behaviors with respect to each others, distance-based heuristics are used to limit their states transition only when interacting with their neighbours and to localize possible deadlock situations. With a local interaction, the advantage of such method lies in its simplicity as it does not burden that much the time complexity, being quasilinear. In addition, since it does not depend on the positioner's geometry, it is also scalable to other positioner's system. \\
-		A motion planning simulator with graphic interface, developed in python is used to validate the priority coordination of the system. The trajectories are first pre-computed before being sent in open-loop to the positioners.
-		As a result, the positioners converging to their target improve from 60-70\% to 80-95\%. 
-		Although it was predictable and logic, the trajectories pre-computation time is longer than just using the decentralized navigation function since another layer of algorithm is added on top of it, which is/can be compensated with more performant hardwares and optimizations. 
+		Projects such as "The Dark Energy Spectroscopic Instrument" (DESI)or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS ) are developing spectrographs, composed of more than thousand of optical fibers in a confined hexagonal focal plane, to study the evolution of the universe. Such systems allow fast reconfiguration of the fibers as they are moved simultaneously to their pre-assigned target by a 2-arm positioner within an short interval of time. Moreover, astronomers prioritize the observation of some objects over those that hold less information, creating a hierarchy of importances or priorities. In a scenario where not all the positioners can reach their targets, It is important to ensure the observation of the high-priority targets. \\
+		In previous works, a decentralized navigation function from the family of potential fields was used for collision-free coordination. While it guarantees convergence of all the positioners to their targets for DESI [\citenum{MakaremDESIConference,makarem2015decentralized}], it fails at planning motion for positioners in MOONS [\citenum{MakaremMoons}]. The reason is that the second arm of the positioners in MOONS is two times the length of the first arm. Covering a larger working space, they are prone to deadlocks, a situation where two or more positioners are blocked by each other and so unable to reach their targets.\\
+		In this paper and in the framework of MOONS project, we present our new approach to integrate pre-assigned priorities with the decentralized navigation functions to reduce the deadlocks situations. For this purpose, we regulate the movements of the positioners using a finite-state machine combined with distance-based heuristics. Each positioner's state dictates its behaviors with respect to other positioners. Distance-based heuristics limit the states transition when a positioner is interacting with its adjacent positioners to localize possible deadlock situations. The advantage of this method is its simplicity as it relies on local interaction of positioners, keeping the complexity of the algorithm quasilinear. In addition, since it does not depend on the positioner's geometry, it is also scalable to other positioner kinematics. \\
+		We developed a motion planning simulator with a graphic interface in python to validate the coordination of the positioners with pre-assigned priorities.  As a result, the number of positioners converging to their targets improve from 60-70\% to 80-95\%. The computation time of the trajectories increases slightly due to the new layer of algorithm added for deadlocks prevention.
 	\end{abstract}
 	
 	% Include a list of keywords after the abstract 
-	\keywords{ MOONs, Optical fiber positioners, Priority coordination, Finite-state machine, distance-based heuristics, Deadlock problem}
+	\keywords{ MOONs, Optical fiber positioners, Priority coordination, Finite-state machine, distance-based heuristics}
 	
 	\section{INTRODUCTION}
 	\label{INTRODUCTION}
-	Recently uncovered that not only the universe is expanding but also that its process is accelerating, massive spectroscopic surveys are used in many international projects such as  "The Dark Energy Spectroscopic Instrument" (DESI) or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS) to study its evolution. The used spectrographs are composed with more than thousand of optical fiber bundles, in a confined hexagonal focal plane. Each one are moving at the same time to a pre-assigned target by a two arms robotics positioner, making real time observation possible.\\\\
-	Anti-collision movement between positioners is therefore essential for a well-functioning system. While the completness of the system, ie convergence of all positioners to their targets, is ensured with the project DESI using a decentralized navigation function algorithm  [\citenum{MakaremMoons,MakaremDESIConference,makarem2015decentralized}], the same approach is not valid for MOONS: its positioners second arm being two time longer as shown in figure ~\ref{MOONS_positioner_simulation} - ~\ref{DESI_positioner_representation}, it is covering a larger workspace and hence creating possible collisions and deadlocks, a situation where positioners, blocked by one another, are unable to reach their targets.\\
+	Recently uncovered that not only the universe is expanding but also that its process is accelerating, massive spectroscopic surveys are used in many international projects such as  "The Dark Energy Spectroscopic Instrument" (DESI) [\citenum{MakaremDESIConference,makarem2015decentralized}] or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS) [\citenum{MakaremMoons}]  to study its evolution. The used spectrographs are composed with more than thousand of optical fiber bundles, in a confined hexagonal focal plane. Each one are moving at the same time to a pre-assigned target by a two arms robotics positioner, making real time observation possible.\\\\\\
+	Anti-collision movement between positioners is therefore essential for a well-functioning system. While the completeness of the system, ie convergence of all positioners to their targets, is ensured with the project DESI using a decentralized navigation function algorithm  [\citenum{MakaremMoons,MakaremDESIConference,makarem2015decentralized}], the same approach is not valid for MOONS: its positioners second arm being two time longer as shown in figure ~\ref{MOONS_positioner_simulation} - ~\ref{DESI_positioner_representation}, it is covering a larger workspace and hence creating possible collisions and deadlocks, a situation where positioners, blocked by one another, are unable to reach their targets.\\
 	
 	\begin{figure}[H]
 		\hspace{2cm}
@@ -75,8 +73,7 @@
 		\end{minipage}
 	\end{figure}
 			
-	Though desirable, having a non complete system is not a serious issue since not all astronomical objects contain the same valuable information to study the universe evolution. Astronomers prefer to prioritize the observation of the important targets even at the price of disregarding the less relevant ones.
-	
+	Though desirable, having a non complete system is not a serious issue since not all astronomical objects contain the same valuable information to study the universe evolution. Astronomers prefer to prioritize the observation of the important targets even at the price of disregarding the less relevant ones.\\\\
 	With MOONS framework and as an extension of the previous work using a decentralized navigation function for collision avoidance [\citenum{MakaremMoons}], this paper explores an approach, through a finite state machine strategy, to take into account the importance/priority of each positioner's target into the coordination of their movements. As it gives more chance for higher priority positioners to reach their targets, its other objective is also to increase the positioners convergence with the goal of having a complete system.\\
 		
 	The organization of this paper is as followed: In section \ref{PRIORITY BASED COORDINATION}, a representation of the system and the finite state machine is described. Then we explain how deadlocks are localized and solved using an heuristic vector-distance based strategy. Section \ref{RESULTS} then presents the result of our approach on various test cases of positioner-configuration. As a conclusion, future research and possible improvements are discussed in section \ref{CONCLUSION}.
@@ -85,14 +82,13 @@
 	\label{PRIORITY BASED COORDINATION}
 	
 	
-	Unlike many motion planning algorithms, the choice of using potential field to move simultaneously thousand of positioners stems from its time complexity and simplicity. It enables fast pre-computation of their anti-collision movements towards their targets. However, due to local minimum problems, using simple potential field to handle more complex systems which can exhibit deadlock situations prove to be complicated: it requires either a more complex development of the algorithm or an additional layer of complexity.\\\\
-	In this work, we design a decision layer using a finite state machine which is built on top of a decentralized navigation function algorithm. It's role is to manage the interaction of positioners with their neighbour positioners having different orders of priorities. 
+	Unlike many motion planning algorithms, the choice of using potential field to move simultaneously thousand of positioners stems from its computational simplicity. It enables fast computation of collision-free movements towards the targets of the positioners. However, due to local minimum problems, using simple potential field to handle more complex systems can exhibit deadlock situations. Therefore, benefiting from an algorithm based on potential fields requires either a more complex development of the algorithm or an additional layer of complexity.\\\\
+	In this work, we design a decision layer using a finite state machine on top of a decentralized navigation function algorithm. Its role is to manage the interaction of positioners with different priorities. 
 
 	\subsection{System representation}	
 		\label{Finite-state machine} 
 	
-	Before explaining our approach, we need to establish how the system with priorities is defined. 
-	 A depiction of the MOONS positioner and its equivalent in simulation are shown in figure \ref{MOONS_positioner_representation} - \ref{MOONS_positioner_simulation} - \ref{sys_representation}, where only the second arm (corresponding to the curve segment of the CAD model) is represented. The red dot is the target pre-assigned to the positioner's end-effector which holds the optic fiber represented by the dot at the extremity of the second arm.
+	 Figure \ref{MOONS_positioner_representation} - \ref{MOONS_positioner_simulation} - \ref{sys_representation} shows the MOONS positioner and its equivalent in simulation, where only the second arm (corresponding to the curve segment of the CAD model) is represented. The red dot is the target assigned to the positioner's end-effector, which holds the optic fiber represented by the dot at the extremity of the second arm.
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.56]{images/system_representation.jpg}
@@ -100,20 +96,20 @@
 			\label{sys_representation}
 		\end{figure}
 	
-	Let $p =$ \{$1,2,3,4$\} be the pre-assigned priority of a positioner, with 4 for the most important target and 1 the less important one. \\
-	$D=$\{$D_e, D_m, D_j$\} is the set of distance between respectively the end-effector, middle and joint part of one positioner to another one's part. In figure \ref{sys_representation}, these distances are represented from positioner B to only the end-effector part of positioner A.\\\\
-	As dictated by the principle of the potential field, each positioner is drawn to its target by an attractive force $F_a$ and avoiding its $i^{ieme}$ neighouring positioners with a repulsive forces, $F_{ri}$. Further details on their implementations in the context of MOONS are given in [\citenum{MakaremMoons}]. \\
+	Let $p =$ \{$1,2,3,4$\} be the assigned priority to a positioner, with 4 for the most important target and 1 for the least important one. \\
+	$D=$\{$D_e, D_m, D_j$\} is the set of distance between respectively the end-effector, middle and joint parts of one positioner to the  end-effector, middle or joint parts of another adjacent positioner. In figure \ref{sys_representation}, these distances are represented from positioner B to only the end-effector part of positioner A.\\\\
+	As dictated by the principle of the potential field, each positioner is attracted to its target by a force $F_a$ and pushed away by the $i^{ieme}$ adjacent positioners with a repulsive forces, $F_{ri}$. Further details on their implementations in the context of MOONS are given in [\citenum{MakaremMoons}]. \\
 	 With more than thousand positioners in a compact space and with each one having at most 6 neighbours, a "zone of influence", $Z_{F_{r}}$, is used for the repulsive forces. They are active only within this zone to limit and simplify the number of forces felt by one positioner from the others.\\ 
-	 The zone $Z_{F_{r}}$ can be of any shape, but in this work, it was decided to be a circle around each part (end-effector, middle and joint) in order to have a simple cover on the whole positioner. The source of the repulsive force comes from the part of the neighbour positioner that is inside the zone $Z_{F_{r}}$.\\
+	 The zone $Z_{F_{r}}$ can be of any shape, but in this work, it was decided to be a circle around each part (end-effector, middle and joint) in order to have a simple cover on the whole positioner. The source of the repulsive force comes from the part of the neighbour positioner that is inside the zone $Z_{F_{r}}$.
 	 
 	\subsection{Finite-state machine}	
 	
-	The finite state machine has a total of 5 states with their corresponding transitions. Designed to take into account different priority values, it regulates the positioners interactions for a better coordination of the system.
+	The finite state machine has a total of 5 states with their corresponding transitions. Designed to take into account different priorities, it regulates the positioners interactions for a better coordination of the system.
 	\subsubsection{First State: ON/OFF}
 	\label{first_state_chap}
 	The first state  is defined as the "ON/OFF" state. With the creation of a "ON/OFF zone", $Z_{ON/OFF}$, associated to a positioner, any neighbour positioners with a lower priority inside will have their attractive forces towards their targets disabled, ie $F_a = 0$. We refer to such a positioner as an OFF one in opposition to an ON one with its attractive force still active.
-	Similarly to the influence zone $Z_{F_{r}}$, we use the same circle shape for $Z_{ON/OFF}$, centered on all the parts of the positioner in order to entirely cover it.\\\\
-	 With only repulsive forces to prevent collision, it allows the ON positioner with the biggest priority to circulate through its OFF neighbours with less resistance, being the only one with an attractive force. This principle using priorities to solve the potential field local minima is illustrated in figure \ref{First_state}. 	
+	Similarly to the influence zone $Z_{F_{r}}$, we use the same circle shape for $Z_{ON/OFF}$, centered on all parts of the positioner in order to entirely cover it.\\\\
+	 With only repulsive forces to prevent collision, it allows the ON positioner with the higher priority to circulate through its OFF neighbours with less resistance, being the only one with an attractive force. This principle using priorities to solve the potential field local minima is illustrated in figure \ref{First_state}. 	
 	\begin{figure}[H]
 		\centering
 		\begin{minipage}[t]{6.5cm}
@@ -123,15 +119,15 @@
 			\includegraphics[scale=0.54]{images/first_state_ONOFF2.jpg}
 		\end{minipage}
 		\caption{\centering Principle of ON/OFF state (left to right image): \\
-			(left image) Positioner B inside  $Z_{ON/OFF}$ of positioner A doesn't have any attractive force and is subject to repulsive force from positioner A, making it going to the opposite direction of its target B; (right image) The same positioner B, once repulsed outside of the zone $Z_{ON/OFF}$  by positioner A, regains its attractive force\\
+			(left image) Positioner B inside  $Z_{ON/OFF}$ of positioner A doesn't have any attractive force and is subject to repulsive force from positioner A, pushing it to the opposite direction of its target B. (right image) The same positioner B, once pushed out of the zone $Z_{ON/OFF}$  by positioner A, regains its attractive force.\\
 \label{key}			}
 		\label{First_state}
 	\end{figure}
 	
-	A direct consequence of using only this state is the problem of deadlock due to oscillations at the limit of the zone $Z_{ON/OFF}$. Considering an ON positioner A and its OFF neighbour B with lower priority inside the zone $Z_{ON/OFF}$ of A (figure \ref{First_state} right image), when the positioner B is at the border of the zone, it can be subject to the problem of reactivation and deactivation of its attractive force. If the reactivated attractive force is opposing the movement of the positioner A, it will re-enter the zone $Z_{ON/OFF}$ of A only to be repulsed again. This switching state process can block the positioner A as the neighbour positioner B will keep oscillating at the same place.\\
+	A direct consequence of using only this state is the problem of deadlock due to oscillations between ON and OFF at the limit of the zone $Z_{ON/OFF}$. Considering an ON positioner A and its OFF neighbour B with lower priority inside the zone $Z_{ON/OFF}$ of A (figure \ref{First_state} right image), when the positioner B is at the border of the zone, it can be subject to the problem of reactivation and deactivation of its attractive force. If the reactivated attractive force is opposing the movement of the positioner A, it will re-enter the zone $Z_{ON/OFF}$ of A only to be repulsed again. This switching states can block the positioner A as the adjacent positioner B keeps oscillating at the same place.\\
 	
-	A deadlock can be interpreted as at least two positioners that stop moving towards their targets because of each other oscillating indefinitely at the same place in space. A moving average filter on the positioner's velocity can be used to  localize and unblock this situation by adding noise from it. Though it might be tempting to modify the magnitude of the different forces or of the noise, one has to consider the risk of collisions due to positioners sudden increase of velocity. \\
-	Furthermore, only evaluating the velocity is necessary but not sufficient to detect a deadlock as explain later in the sub-chapter \ref{sub_chapter_fifth_state} since positioners can have a null velocity when arrived or when repulsing another one. \\\\
+	A deadlock can be interpreted like at least two adjacent positioners that stop moving towards their targets because of each other, oscillating indefinitely at the same place in space. A moving average filter on the positioner's velocity can be used to localize and unblock this situation by adding noise to it. Though it might be tempting to modify the magnitude of the different forces or of the noise, one has to consider the risk of collisions due to positioners sudden increase of velocity. \\
+	Furthermore, only evaluating the velocity is necessary but not sufficient to detect a deadlock as explain later in the sub-chapter \ref{sub_chapter_fifth_state} since positioners can have a null velocity when arrived at their targets or when repulsing another one. \\\\
 	With $v[t]$ the velocity of one positioner at time $t$, $y[t]$ is the output of the average moving filter of window $M$ such as:
 	\begin{equation}
 	\left\{
@@ -146,26 +142,24 @@
 	\, \right.
 	\label{}
 	\end{equation} 
-	We define $thres$, which value is defined experimentally, as the threshold representing when the positioner can be considered as "stopped".
+	We define $thres$ as the threshold representing the time the positioner is considered "stopped". The value of this constant is defined experimentally.
 	The result $y[t]$ is used to introduce noise once it is under this threshold. 
 		
 	\subsubsection{Second \& third state: ID and Priority memorization}
-	Having introduced new variables with the first state, we need to determine how positioners interact with each others depending not only on their pre-assigned priority but also on their  ON and OFF states.\\\\
-	As for the reason, problematic situations can also occur with the interaction of more than two positioners. Similarly to the positioner configuration illustrated in figure \ref{ID_PR} (left image), deadlock can happen when two ON high priority positioners A and B are going against each other by propagating their oppposite movements through an intermediate low priority OFF positioner C that is in-between them.\\
-	
-	In order to solve this problem and also for a better coordination of the system, we use the principle of memorization by introducing two new states: 
+	Having introduced new variables with the first state, we need to determine how positioners interact with each others depending not only on their assigned priority but also on their  ON and OFF states.\\\\
+	Problematic situations can also occur with the interaction of more than two positioners. Similarly to the positioners configuration illustrated in figure \ref{ID_PR} (left image), deadlock can happen when two ON high priority positioners A and B are going against each other by propagating their opposite movements through an intermediate low priority OFF positioner C that is in-between them.\\\\
+	To solve this problem, we use the principle of memorization by introducing two new states: 
 	\begin{itemize}
 		\item "MemPr":  \\
-		Initialized at 0 for a positioner, it is used to memorize either the pre-assigned priority or the MemPr of its neighbour positioner which changed its  states.\\
+		Initialized at 0 for a positioner, it is used to memorize either the assigned priority or the MemPr of its neighbour positioner which has changed its  states.\\
 		\item "MemId": \\
-		Initialized at 0 for a positioner, it is used to memorize only the identity of its neighbour positioner which changed its states.
+		Initialized at 0 for a positioner, it is used to memorize only the identity of its neighbour positioner which has changed its states.
 	\end{itemize}\\
-	  With this information and in a similar situation than in figure \ref{ID_PR}, one OFF positioner C, whose states has been changed by an ON neighbour positioner A due to its higher priority, is now able to influence its other ON neighbours states if their pre-assigned priorities are smaller than "MemPr" of C. The positioner A which changed the state of positioner C has its pre-assigned priority memorized by C. It enables the positioner A, through C, to influence other positioners whose movements are opposing its one, allowing to have its convergence to its target with less resistance.\\
-	 We define this process as a "chain reaction": one OFF positioner being able to change the states of its neighbour positioner that is not the one that originally influenced it. \\
+	  With this information and in a similar situation as in figure \ref{ID_PR}, one OFF positioner C, whose states has been changed by an ON neighbour positioner A due to its higher priority, is now able to change its other ON adjacent positioners states if their assigned priorities are smaller than the memorized priority "MemPr" of C. The positioner A, which changed the state of positioner C has its assigned priority memorized by C.  Put in another words, the positioner A is able, through C, to influence other non-adjacent positioners whose movements are opposing its one, allowing to have its convergence to its target A with less resistance.\\\\\\
+	 We define this process as a "chain reaction": one OFF positioner can change the states of its neighbour positioner that is not the one that originally influenced it. \\
 	 
-	 To understand this principle and the assignments of values for "MemPr"  and "MemId", the pseudo-code of algorithm \ref{First_algo} gives a concise overview on how all the states seen so far for an considered positioner, called agent positioner, are changed when interacting with one of its neighbour. A visual step-by-step example following the algorithm \ref{First_algo} is illustrated in figure \ref{ID_PR}. \\\\
-	 Furthermore, these rules are only valid if the agent positioner has not yet arrived to its target and is inside the $Z_{ON/OFF}$ zone of its considered neighbour.  
-	 A condition related to another positioner state, the fourth one, that will be fully understand, as well as the whole condition in line \ref{arr_condition_line}, in the next sub-chapter \ref{sub_chap_fourth_state}.\\\\
+	 To understand this principle and the assignments of values for "MemPr"  and "MemId", the pseudo-code of algorithm \ref{First_algo} gives a concise overview on how all the states seen so far for an considered positioner, called agent positioner, are changed when interacting with one of its neighbours. A visual step-by-step example following the algorithm \ref{First_algo} is illustrated in figure \ref{ID_PR}. \\\\
+	 Furthermore, these rules are only valid if the agent positioner has not yet arrived to its target and is inside the $Z_{ON/OFF}$ zone of its neighbour positioner. This condition, represented by the line \ref{arr_condition_line}, involved the fourth state, "Arr", that is explained in the next sub-chapter \ref{sub_chap_fourth_state}. 
  	\begin{figure}[H]
  		\centering
  		\begin{minipage}[t]{5.2cm}
@@ -182,14 +176,14 @@
  			\label{ID_PR2}
  		\end{minipage}
  		\caption{\centering Positioner chain reaction using MemId and MemPr states, obeying algorithm \ref{First_algo} for interaction:\\
- 			(left image) Positioner A with the biggest priority influences its neighbour positioner C which remembers the priority and id information of A when becoming OFF; (middle image) Even if positioner C pre-assigned priority is smaller than B one, because C is OFF, B has to look on the memorized information of C: B having a smaller pre-assigned priority, it becomes OFF and carry on the memorized priority of C; (right image) Once positioner A is out of the zone $Z_{ON/OFF}$ of C, deep first search is used to reset all the states of all the positioners that are in the chain reaction because of A }
+ 			(left image) Positioner A with the biggest priority influences its neighbour positioner C which remembers the priority and ID information of A when becoming OFF; (middle image) Even if positioner C assigned priority is smaller than the one from B, because C is OFF, B has to look on the memorized information of C: B having a smaller assigned priority, it becomes OFF and carry on the memorized priority of C; (right image) Once positioner A is out of the zone $Z_{ON/OFF}$ of C, deep first search algorithm using the memorized ID, "MemId" is used to recognize and reset all the states of all the positioners that entered the chain reaction process because of A }
  		\label{ID_PR}
  	\end{figure}
-	   The four main conditions in lines \ref{condition1}, \ref{condition2}, \ref{condition3}, \ref{condition4}, in the algorithm \ref{First_algo} correspond to all the possible interactions of two positioners based on their ON/OFF states. It shows how the neighbour positioner states is compared and is changing the agent positioner ones. Only the agent positioner states are modified. The reason is simply because algorithm \ref{First_algo} is applied to each positioner with respect to each of its neighours in the system.\\
+	   The four main conditions in lines \ref{condition1}, \ref{condition2}, \ref{condition3}, \ref{condition4}, in the algorithm \ref{First_algo} correspond to all the possible interactions of two adajacent positioners based on their ON/OFF states. It shows how the neighbour positioner states are compared with the agent ones and also how the values are assigned for the agent positioner states. Only the agent positioner states are modified. The reason is simply because algorithm \ref{First_algo} is applied to each positioner with respect to each of its adjacent positioners in the system.\\
 	 
-	The general rule of comparison for the priorities in line \ref{comparison1}, \ref{comparison2}, \ref{comparison3}, \ref{comparison4} depends on the ON/OFF state of the positioner: if the positioner is ON, the pre-assigned priority is used, otherwise it is the memorized priority "MemPr". Similarly, the possible values that can be assigned for the state "MemPr" of the agent positioner as shown in the lines after those conditions also depend on the first state ON/OFF of the neighbour positioner: the pre-assigned priority of the neighbour positioner if ON, else its "MemPr" priority.\\
-	Therefore, all OFF positioners in the chain reaction remember the pre-assigned priority of the only ON positioner which is at the origin of this chain.\\\\	
-	In all cases, the agent positioner always remember the ID of the neighbour positioner. It is used to track down all the positioners responsible for the chain reaction.   
+	The general rule of comparison for the priorities in line \ref{comparison1}, \ref{comparison2}, \ref{comparison3}, \ref{comparison4} depends on the ON/OFF state of the positioner: if the positioner is ON, the assigned priority is used, otherwise the memorized priority, "MemPr". Then the values attributed to the "MemPr" state of the agent positioner follows the same logic.\\
+	Therefore, all OFF positioners in the chain reaction remember the assigned priority of the only ON positioner, which is at the origin of this chain reaction.\\\\	
+	In all cases, the agent positioner always remembers the ID of the neighbour positioner. It is used to track down all the positioners in the chain reaction.   
 	\begin{algorithm}[H]
 		\caption{agent\_status($agent$, $neighbour$)}\label{AlgoRedSoftEnve}
 		\label{First_algo}
@@ -245,26 +239,26 @@
 	}
 		\BlankLine
 	\end{algorithm}
-	 The lifetime of the memorization states, "MemId" and "MemPr", is bound to its agent positioner being OFF inside the $Z_{ON/OFF}$ zone of the neighbour positioner that changed its states. Once outside, its states are re-initialized at their initial values, i.e. the first state at ON and the memorization states at 0. The states of all the other positioners that were influenced by the re-initiliazed agent positioner through the chain reaction process are also re-initialized. To do so, deep first search algorithm can be used with the "MemId" information to recognize which positioner is in the chain reaction.\\\\
-	When the algorithm \ref{First_algo} is reapplied again on the same two positioners, the agent positioner inside the $Z_{ON/OFF}$ zone of its neighbour positioner won't enter any of the conditions mentionned above since its states were already changed previously by this same neighbour. The condition in line \ref{conditionSame} is added to ouptut that the agent positioner is still being affected by the same neighbour positioner, in order to avoid any complicated behaviors of the system.  
+	 The lifetime of the memorization states, "MemId" and "MemPr", is bound to its agent positioner being OFF inside the $Z_{ON/OFF}$ zone of the neighbour positioner that has changed its states. Once outside, the states of the agent are re-initialized at their initial values, i.e. the first state at ON and the memorization states at 0. The states of all the other positioners that entered in the chain reaction process because of the agent positioner are also re-initialized. The algorithm of deep first search is used with the "MemId" information to recognize all the positioners in the chain reaction.\\\\
+	When the algorithm \ref{First_algo} is reapplied again on the same two positioners, the agent positioner inside the $Z_{ON/OFF}$ zone of its neighbour positioner won't enter any of the conditions of the lines \ref{comparison1}, \ref{comparison2}, \ref{comparison3}, \ref{comparison4}  since its states were already changed previously by this same neighbour. The condition in line \ref{conditionSame} is added to ouptut that the agent positioner is still being affected by the same neighbour positioner, in order to avoid any complicated behaviors of the system.  
 
 	
 	\subsubsection{Fourth state: Arrived}
 	\label{sub_chap_fourth_state}
-	With the supposition that a positioner with the highest priority, $p = 4$, is already at destination, any lower priority positioners with their targets inside its zones $Z_{ON/OFF}$ and $Z_{F_{r}}$  are subject to repulsion forces and a changes of their states. The results are their attractive forces being disabled once inside the zones and the positioners being repulsed without resistance, hence never reaching their targets.\\
+	With the assumption that a positioner A with the highest priority, $p = 4$, is already at destination, any lower priority positioners with their targets inside the zones $Z_{ON/OFF}$ and $Z_{F_{r}}$ of A are subject to repulsive forces and a change of their states. As a result the attractive forces of these lower priority positioners are disabled once inside the zones of A. They will be repulsed without resistance, and never reach their targets.\\
 	\\
-	This particular oscillation scenario is shown in figure \ref{fourth_state} with a the positioner A having a higher pre-assigned priority than a positioner B whose target is inside the zones of A. Once inside the $Z_{ON/OFF}$ and $Z_{F_{r}}$, the positioner B, changing to OFF, will have its attractive force deactivate and repulsed.
+	This particular oscillation scenario is shown in figure \ref{fourth_state} with positioner A having a higher assigned priority than positioner B, whose target is inside the zones of A. Once inside the zone $Z_{ON/OFF}$ and $Z_{F_{r}}$, the positioner B changes to OFF and has its attractive force deactivated.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.64]{images/fourth_state.jpg}
-		\caption{\centering	Principle of fourth state "Arr":\\
-		Problematic configuration with target inside a higher priority "already-converged" positioner zones $Z_{ON/OFF}$ and $Z_{F_{r}}$ }
+		\caption{\centering	Configuration of two positioners requiring the principle of the fourth state "Arr":\\
+		Low-priority positioner B whose target B is inside a higher priority "already-arrived" positioner A zones $Z_{ON/OFF}$ and $Z_{F_{r}}$ }
 		\label{fourth_state}
 	\end{figure}
-	In order to solve this problematic behavior, a fourth state, "Arr", is introduced to qualify a positioner that has converged to its target. \\\\
-	Coming with this new state is the inability for the already converged positioner A to affect any other positioners states which are inside its zone $Z_{ON/OFF}$, regardless of their priorities.
-	Without having their attractive forces canceled, the neighbour positioners can converge to their targets that are inside the zone.\\\\
-	In addition, the zone $Z_{F_{r}}$ has to be mitigated such that the repulsive forces felt from the neighbour positioners do not hinder their convergences. Although several complex methods can be used, we decided to simply reduce the radius of the repulsion zone $Z_{F_{r}}$. Though two very close targets can make two positioners oscillates a little bit as the one arriving might repulse the one already arrived, both can stabilize and converge surprisingly well by adding some dead-zone between the end-effector and its target or time delay before the positioner exit its "Arr" state.  
+	In order to solve the problem of oscillation of the positioner near a high priority positioner, which has arrived to the target, we introduce a fourth state, "Arr". This state represents the positioner that has already arrived to its target. \\\\
+	if a positioner A is in "Arr" state, it cannot change the states of any other positioners inside its zone $Z_{ON/OFF}$, regardless of their priorities. 
+	Without having their attractive forces canceled, the neighbour positioners can converge to their targets that are inside the zone of A.\\\\
+	In addition, the zone $Z_{F_{r}}$ of the already-arrived positioner has to be mitigated such that the repulsive forces felt by the neighbour positioners do not hinder their convergences, so we reduce the radius of the repulsion zone $Z_{F_{r}}$. Though two very close targets can make two positioners oscillate a little bit as the one arriving might repulse the one already arrived, both can stabilize and converge surprisingly well by adding some dead-zone between the end-effector and its target or time delay before the positioner exit its "Arr" state.  
 	
 	\subsubsection{Fifth state: Deadlock and pseudo-priority}
 	\label{sub_chapter_fifth_state}
@@ -276,20 +270,16 @@
 	\end{enumerate}
 	
 	\paragraph{State \& Principle}\mbox{}\\
-	So far, the finite state machine only takes into account direct positioner interaction that have different priority values.
-	When two positioners with the same priority but opposite movement direction enter in direct contact, deadlock situations is more highly to occur. This scenario is the reason why a fifth and last state is added to the finite state machine: to regulate the direct interaction between positioners with same priority value.\\\\	
-	To better understand the design of this state and also of its principle, an analogy is first done with an example of the well-known trafic jam problem where two vehicles are being blocked by each other at one intersection. Of course, an ambulance in this scenario would have had the priority over the other vehicles, which is why we assume that they are two same vehicle of equal importance.\\
-	Usually in this kind of situation, the first goal of the drivers is not to reach their targets but instead to find a solution to the actual deadlock while respecting the code of the road. They also monitor if any more important vehicles such as an ambulance or a military tank are approaching (so they can quickly go off-route to let them pass).\\ 
-	To solve the deadlock, they just "isolate" themselves from the rest (involving more vehicles in the deadlock will only make the situation more complicated to solve)  in order to better determine which one should have the priority over the other. 
-	To establish the best course of actions, their evaluations are usually based on the indications of direction (the targeted direction) given by the other driver.\\
+	So far, the finite state machine only takes into account direct positioner interaction that have different priorities.
+	When two positioners with the same priority but opposite movement direction enter in direct contact, deadlock situations are more probable to occur. A fifth and last state is added to the finite state machine to regulate the direct interaction between positioners with the same priorities.\\\\	
+	To better understand the principle of this state, an analogy is done with an example of a well-known trafic problem, where two vehicles are being blocked by each other at one intersection. 
+	In this kind of situation, the first goal of the drivers is not to reach their targets but to find a solution to the actual deadlock. They also monitor if any more important vehicle such as an ambulance is approaching. To solve the deadlock, they just "isolate" themselves from the rest to better determine which one should have the priority. To establish the best course of actions, each driver's evaluation is usually based on the indications of direction (the targeted direction) given by the other driver.\\
 	
-	
-	With this example in mind, we define the fifth state, "lock\_sm", to designate if the positioner is in a deadlock situation with another one that has the same priority value. For the rest of this paper, we refer to this specific situation as a "lock\_sm" one. \\\\
-	In addition, a pseudo-priority variable, "psPr", is also associated to each positioner. It enables the system to obey the following principle, also illustrated in figure \ref{5thState}:\\
-	When in a "lock\_sm" situation, the first goal of the two positioners is not to reach their targets anymore but instead to solve their current problem by determining which one should have the priority over the other. \\
-	 In order to solve this situation more quickly, both the distances from their end-effector to their respective targets are evaluated. The positioner with the smallest distance becomes more important. \\
-	 The idea is to have the pseudo-priority, "psPr", used only for positioners in "lock\_sm" situation, in order to indicate which of the two positioners is more important while the interactions with the other positioners is regulated with the pre-assigned or memorized priority. \\\\
-	Moreover, to facilitate their movements when unblocking the deadlock, the positioner with bigger pseudo-priority has an additional isotropic and constant repulsive force from the target of the other positioner. The force can be formulated as a direct weighted relation with the average of the recent past velocities values of the positioner in order to diminish the risk of collision due to sudden speed increase.\\\\
+	With this example in mind, we define the fifth state, "lock\_sm", to define if the positioner is in a deadlock situation with another one that has the same priority value. For the rest of this paper, we refer to this specific situation as a "lock\_sm". \\\\
+	In addition, a pseudo-priority variable, "psPr", is associated to each positioner. It enables the system to obey the following principle, also illustrated in figure \ref{5thState}:\\
+	When in a "lock\_sm" situation, the first goal of the two positioners is not to reach their targets but to solve their current problem by determining which one should have the priority over the other. \\
+	 To solve this situation more quickly, the distances from their end-effector to their respective targets are evaluated. The positioner with the smallest distance has a higher pseudo-priority. The pseudo-priority, "psPr" is only used for positioners in "lock\_sm" situation. All the interactions with the other positioners is regulated with the assigned or memorized priorities. \\\\
+	To unblock a deadlock, the positioner with higher pseudo-priority has an additional constant repulsive force from the target of the other positioner. The force can be formulated as a direct weighted relation with the average of the recent past velocities values of the positioner in order to diminish the risk of collision due to sudden speed increase.\\\\
 	
 	\begin{figure}[H]
 		\centering
@@ -300,8 +290,8 @@
 	\end{figure}
 	
 	\paragraph{Values \& interactions}\mbox{}\\
-	The fifth state, "lock\_sm", and the pseudo-priority, "psPr", are both respectively initialized at 0 and at the pre-assigned priority of the positioner. They are subject to a change of values when the considered positioner is inside the zone "$Z_{ON/OFF}$" of one of its neighbour and the configuration of the two positioners is considered leading to a "lock\_sm" situation. \\
-	In case of a "lock\_sm" situation, the pseudo-priority of the positioner deemed the most important one is increased by 1, while both positioner's fifth states "lock\_sm" are being equaled to the ID of the most important positioner. The reason is to give an unique identification so the two positioners can recognize among their neighgours that they are both together in a "lock\_sm" situation.\\ 
+	The fifth state, "lock\_sm", and the pseudo-priority, "psPr", are both respectively initialized at 0 and at the pre-assigned priority of the positioner. They are subject to a change of values when the considered positioner is inside the zone "$Z_{ON/OFF}$" of one of its neighbours and the configuration of the two positioners is considered leading to a "lock\_sm" situation. \\
+	In case of a "lock\_sm" situation, the pseudo-priority of the positioner deemed the most important one is increased by 1, while both positioner's fifth states "lock\_sm" are being equaled to the ID of the most important positioner. The reason is to give a unique identification so the two positioners can be recognized among their neighgours that they are both together in a "lock\_sm" situation.\\ 
 	
  The values of all the states depend not only on the ON/OFF state but also on the new introduced variables: "lock\_sm" and "psPr". The pseudo-code of algorithm \ref{First_algo} is then completed with conditions to take into account all these new possible interactions between positioners. \\
 The reasoning on how to integrate these new cases is explained and also shown with algorithm \ref{Second_algo} which represents only the condition of line \ref{condition3} of algorithm \ref{First_algo} with the agent and neighbour positioners being OFF. The same logic is applied to complete the rest of the conditions in lines \ref{condition1}, \ref{condition2} and \ref{condition4} of algorithm \ref{First_algo}.\\\\
