@@ -256,8 +256,8 @@
 		\label{fourth_state}
 	\end{figure}
 	In order to solve the problem of oscillation of the positioner near a high priority positioner, which has arrived to the target, we introduce a fourth state, "Arr". This state represents the positioner that has already arrived to its target. \\\\
-	if a positioner A is in "Arr" state, it cannot change the states of any other positioners inside its zone $Z_{ON/OFF}$, regardless of their priorities. 
-	Without having their attractive forces canceled, the neighbour positioners can converge to their targets that are inside the zone of A.\\\\
+	If a positioner A is in "Arr" state, it cannot change the states of any other positioners inside its zone $Z_{ON/OFF}$, regardless of their priorities. 
+	Without having their attractive forces canceled, its neighbour positioners can converge to their targets that are inside the zone of A.\\\\
 	In addition, the zone $Z_{F_{r}}$ of the already-arrived positioner has to be mitigated such that the repulsive forces felt by the neighbour positioners do not hinder their convergences, so we reduce the radius of the repulsion zone $Z_{F_{r}}$. Though two very close targets can make two positioners oscillate a little bit as the one arriving might repulse the one already arrived, both can stabilize and converge surprisingly well by adding some dead-zone between the end-effector and its target or time delay before the positioner exit its "Arr" state.  
 	
 	\subsubsection{Fifth state: Deadlock and pseudo-priority}
