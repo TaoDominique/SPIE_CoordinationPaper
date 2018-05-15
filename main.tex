@@ -182,15 +182,16 @@
 	   The four main conditions in lines \ref{condition1}, \ref{condition2}, \ref{condition3}, \ref{condition4}, in the algorithm \ref{First_algo} correspond to all the possible interactions of two adajacent positioners based on their ON/OFF states. It shows how the neighbour positioner states are compared with the agent ones and also how the values are assigned for the agent positioner states. Only the agent positioner states are modified. The reason is simply because algorithm \ref{First_algo} is applied to each positioner with respect to each of its adjacent positioners in the system.\\\\
 	The general rule of comparison for the priorities in line \ref{comparison1}, \ref{comparison2}, \ref{comparison3}, \ref{comparison4} depends on the ON/OFF state of the positioner: if the positioner is ON, the assigned priority is used, otherwise the memorized priority, "MemPr". Then the values attributed to the "MemPr" state of the agent positioner follows the same logic.\\
 	Therefore, all OFF positioners in the chain reaction remember the assigned priority of the only ON positioner, which is at the origin of this chain reaction.\\\\	
-	In all cases, the agent positioner always remembers the ID of the neighbour positioner. It is used to track down all the positioners in the chain reaction.   
+	In all cases, the agent positioner always remembers the ID of the neighbour positioner. It is used to track down all the positioners in the chain reaction.
+	
+	\begin{minipage}[]{16.6cm}
 	\begin{algorithm}[H]
 		\caption{agent\_status($agent$, $neighbour$)}\label{AlgoRedSoftEnve}
 		\label{First_algo}
-		\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
-		\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
-		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-		\Output{For a considered positioner, called agent positioners, modification of its 1st, 2nd and 3rd states with respect to its considered neighbour positioner }
+		\SetKwInOut{Output}{output}
 		
+		\Output{For a considered positioner, called agent positioners, modification of its 1st, 2nd and 3rd states with respect to its considered neighbour positioner }
+
 		\BlankLine
 		\setcounter{AlgoLine}{0}
 		\SetAlgoLined
@@ -238,6 +239,8 @@
 	}
 		\BlankLine
 	\end{algorithm}
+	\end{minipage}
+	
 	 The lifetime of the memorization states, "MemId" and "MemPr", is bound to its agent positioner being OFF inside the $Z_{ON/OFF}$ zone of the neighbour positioner that has changed its states. Once outside, the states of the agent are re-initialized at their initial values, i.e. the first state at ON and the memorization states at 0. The states of all the other positioners that entered in the chain reaction process because of the agent positioner are also re-initialized. The algorithm of deep first search is used with the "MemId" information to recognize all the positioners in the chain reaction.\\\\
 	When the algorithm \ref{First_algo} is reapplied again on the same two positioners, the agent positioner inside the $Z_{ON/OFF}$ zone of its neighbour positioner won't enter any of the conditions of the lines \ref{comparison1}, \ref{comparison2}, \ref{comparison3}, \ref{comparison4}  since its states were already changed previously by this same neighbour. The condition in line \ref{conditionSame} is added to ouptut that the agent positioner is still being affected by the same neighbour positioner, in order to avoid any complicated behaviors of the system.  
 
@@ -308,7 +311,9 @@ Following this logic, a positioner that is in a "lock\_sm" situation, regardless
 \end{itemize}
 \end{itemize}	
 For any combination of their ON/OFF states, when the agent positioner in a "lock\_sm" situation has been influenced by its neighbour that is not in a "lock\_sm" situation, it means that the neighbour was able to break out the deadlock situation because of its higher importance. Consequently, both the agent and the neighbour positioner together in the "lock\_sm" situation have their fifth states and pseudo-priorities re-initialized.\\
-The agent positioner always memorizes the priority that the neighbour positioner uses for the priority comparison. Similarly, the agent always memorizes the Id of the neighbour (not its MemId). 
+The agent positioner always memorizes the priority that the neighbour positioner uses for the priority comparison. Similarly, the agent always memorizes the Id of the neighbour (not its MemId).
+
+	\begin{minipage}[]{16.6cm} 
 		\begin{algorithm}[H]
 			\caption{Completion of the condition in line \ref{condition3} in algorithm \ref{First_algo}}
 			\label{Second_algo}
@@ -356,6 +361,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 			}
 			\BlankLine
 		\end{algorithm}
+	\end{minipage}
 	
 	\paragraph{Deadlock "lock\_sm" localization}\mbox{}\\
 	In this paragraph, the objective is to describe how we consider the configuration between two positioners to be a "lock\_sm" situation.\\
@@ -404,7 +410,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 	To this end, for each configuration test file, the total number of around a thousand of positioners is partitioned into 12 subsets of sub-total positioners, on which we run our algorithm. The results are given in figures \ref{configuration1_result}, \ref{configuration2_result}, \ref{configuration3_result}, \ref{configuration4_result}, \ref{configuration5_result}, \ref{configuration6_result}, \ref{configuration7_result}, \ref{configuration8_result}.
 	
 	\begin{figure}[H]
-		\begin{minipage}{8.7cm}
+		\begin{minipage}{8.6cm}
 			\begin{minipage}[t]{4.3cm}
 				\includegraphics[scale=0.56]{images/configuration1_conv}
 				\label{configuration1_conv}
@@ -435,7 +441,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 			\end{tabular}}
 				\label{configuration1_result}
 		\end{minipage}
-		\begin{minipage}{9cm}
+		\begin{minipage}{7.5cm}
 			\begin{minipage}[t]{4.2cm}
 				\includegraphics[scale=0.56]{images/configuration2_conv}
 				\label{configuration1_conv}
@@ -469,7 +475,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 			\end{minipage}
 	\end{figure}
 \begin{figure}[H]
-	\begin{minipage}{8.7cm}
+	\begin{minipage}{8.6cm}
 		\begin{minipage}[t]{4.3cm}
 			\includegraphics[scale=0.56]{images/configuration3_conv}
 			\label{configuration1_conv}
@@ -497,7 +503,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 			}
 			\label{configuration3_result} 
 		\end{minipage}
-		\begin{minipage}{9cm}
+		\begin{minipage}{7.5cm}
 			\begin{minipage}[t]{4.2cm}
 				\includegraphics[scale=0.56]{images/configuration4_conv}
 				\label{configuration1_conv}
@@ -527,7 +533,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 			\end{minipage}
 		\end{figure}
 \begin{figure}[H]
-	\begin{minipage}{8.7cm}
+	\begin{minipage}{8.6cm}
 		\begin{minipage}[t]{4.3cm}
 			\includegraphics[scale=0.56]{images/configuration5_conv}
 			\label{configuration1_conv}
@@ -555,7 +561,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 			}
 			\label{configuration5_result} 
 		\end{minipage}
-		\begin{minipage}{9cm}
+		\begin{minipage}{7.5cm}
 			\begin{minipage}[t]{4.2cm}
 				\includegraphics[scale=0.56]{images/configuration6_conv}
 				\label{configuration1_conv}
@@ -585,7 +591,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 			\end{minipage}
 		\end{figure}
 \begin{figure}[H]
-	\begin{minipage}{8.7cm}
+	\begin{minipage}{8.6cm}
 		\begin{minipage}[t]{4.3cm}
 			\includegraphics[scale=0.56]{images/configuration7_conv}
 			\label{configuration1_conv}
@@ -613,7 +619,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 			}
 		\label{configuration7_result} 
 		\end{minipage}
-		\begin{minipage}{9cm}
+		\begin{minipage}{7.5cm}
 			\begin{minipage}[t]{4.2cm}
 				\includegraphics[scale=0.56]{images/configuration8_conv}
 				\label{configuration1_conv}
