@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.14)  15 MAY 2018 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.14)  15 MAY 2018 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,14 +583,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--56
 [301
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<images/realPositioner.jpg, id=81, 63.1158pt x 85.7604pt>
+<images/realPositioner.jpg, id=84, 63.1158pt x 85.7604pt>
 File: images/realPositioner.jpg Graphic file (type jpg)
 
 <use images/realPositioner.jpg>
 Package pdftex.def Info: images/realPositioner.jpg used on input line 60.
-(pdftex.def)             Requested size: 18.93488pt x 25.7283pt.
+(pdftex.def)             Requested size: 75.73856pt x 102.91194pt.
 
-<images/MOONSPositioner_Simulation.png, id=82, 211.38976pt x 214.401pt>
+<images/MOONSPositioner_Simulation.png, id=85, 211.38976pt x 214.401pt>
 File: images/MOONSPositioner_Simulation.png Graphic file (type png)
 
 <use images/MOONSPositioner_Simulation.png>
@@ -602,7 +602,7 @@ Underfull \hbox (badness 1189) in paragraph at lines 66--66
 []\OT1/cmr/m/n/9 Figure 2. []MOONS po-si-tioner in
  []
 
-<images/DESI_Positioner.png, id=83, 321.6015pt x 348.70274pt>
+<images/DESI_Positioner.png, id=86, 321.6015pt x 348.70274pt>
 File: images/DESI_Positioner.png Graphic file (type png)
 
 <use images/DESI_Positioner.png>
@@ -623,13 +623,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
-<images/system_representation.jpg, id=92, 179.4705pt x 132.495pt>
+<images/system_representation.jpg, id=95, 179.4705pt x 132.495pt>
 File: images/system_representation.jpg Graphic file (type jpg)
 
 <use images/system_representation.jpg>
 Package pdftex.def Info: images/system_representation.jpg used on input line 94
 .
-(pdftex.def)             Requested size: 100.50278pt x 74.19669pt.
+(pdftex.def)             Requested size: 179.47005pt x 132.49466pt.
  [302pdfTeX warning (ext4): destination with the same identifier (name{figure.1
 }) has been already used, duplicate ignored
 
@@ -662,19 +662,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--104
 
  []
 
-<images/first_state_0.jpg, id=105, 192.11775pt x 154.176pt>
+<images/first_state_0.jpg, id=108, 192.11775pt x 154.176pt>
 File: images/first_state_0.jpg Graphic file (type jpg)
 
 <use images/first_state_0.jpg>
 Package pdftex.def Info: images/first_state_0.jpg used on input line 116.
-(pdftex.def)             Requested size: 103.74203pt x 83.25378pt.
+(pdftex.def)             Requested size: 172.90437pt x 138.7571pt.
 
-<images/first_state_ONOFF2.jpg, id=106, 148.1535pt x 139.11975pt>
+<images/first_state_ONOFF2.jpg, id=109, 148.1535pt x 139.11975pt>
 File: images/first_state_ONOFF2.jpg Graphic file (type jpg)
 
 <use images/first_state_ONOFF2.jpg>
 Package pdftex.def Info: images/first_state_ONOFF2.jpg used on input line 119.
-(pdftex.def)             Requested size: 80.0017pt x 75.12354pt.
+(pdftex.def)             Requested size: 133.33691pt x 125.2066pt.
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
@@ -728,25 +728,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--125
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
-
- []
-
 [303pdfTeX warning (ext4): destination with the same identifier (name{figure.4}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.128 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5}) has been already used, duplicate ignored
+l.126 
+       <./images/system_representation.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.128 
-       <./images/system_representation.jpg> <./images/first_state_0.jpg> <./ima
-ges/first_state_ONOFF2.jpg>]
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 129--132
 
  []
@@ -766,6 +759,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
+[304pdfTeX warning (ext4): destination with the same identifier (name{figure.5}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.155 		\item "
+               MemId": \\ <./images/first_state_0.jpg> <./images/first_state_ON
+OFF2.jpg>]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -795,10 +796,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--160
 
  []
 
-[304] <images/ID_PR0.jpg, id=135, 588.39825pt x 451.08525pt>
+<images/ID_PR0.jpg, id=138, 588.39825pt x 451.08525pt>
 File: images/ID_PR0.jpg Graphic file (type jpg)
-
-<use images/ID_PR0.jpg>
+ <use images/ID_PR0.jpg>
 Package pdftex.def Info: images/ID_PR0.jpg used on input line 167.
 (pdftex.def)             Requested size: 176.52083pt x 135.32661pt.
 
@@ -806,7 +806,7 @@ Overfull \hbox (28.56659pt too wide) in paragraph at lines 167--169
 [][]
  []
 
-<images/ID_PR1.jpg, id=136, 588.39825pt x 451.08525pt>
+<images/ID_PR1.jpg, id=139, 588.39825pt x 451.08525pt>
 File: images/ID_PR1.jpg Graphic file (type jpg)
  <use images/ID_PR1.jpg>
 Package pdftex.def Info: images/ID_PR1.jpg used on input line 171.
@@ -816,7 +816,7 @@ Overfull \hbox (22.87613pt too wide) in paragraph at lines 171--173
 [][]
  []
 
-<images/ID_PR2.jpg, id=137, 588.39825pt x 451.08525pt>
+<images/ID_PR2.jpg, id=140, 588.39825pt x 451.08525pt>
 File: images/ID_PR2.jpg Graphic file (type jpg)
  <use images/ID_PR2.jpg>
 Package pdftex.def Info: images/ID_PR2.jpg used on input line 175.
@@ -898,19 +898,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--240
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.241 	 T
-         he lifetime of the memorization states, "MemId" and "MemPr", is bou...
- <./images/ID_PR0.jpg> <./images/ID_PR1.jpg> <./images/ID_PR2.jpg>]
+l.240 	\end{algorithm}
+                       <./images/ID_PR0.jpg> <./images/ID_PR1.jpg> <./images/ID
+_PR2.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 241--243
 
  []
 
-<images/fourth_state.jpg, id=172, 148.1535pt x 139.11975pt>
+[306] <images/fourth_state.jpg, id=190, 148.1535pt x 139.11975pt>
 File: images/fourth_state.jpg Graphic file (type jpg)
 
 <use images/fourth_state.jpg>
 Package pdftex.def Info: images/fourth_state.jpg used on input line 252.
-(pdftex.def)             Requested size: 94.81792pt x 89.03632pt.
+(pdftex.def)             Requested size: 148.15314pt x 139.1194pt.
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
@@ -952,7 +952,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--256
 
  []
 
-[306]
+
 Underfull \hbox (badness 10000) in paragraph at lines 257--261
 
  []
@@ -969,26 +969,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 271--276
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 271--276
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
 
  []
 
@@ -997,19 +977,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--282
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.282 
+l.276 
        <./images/fourth_state.jpg>]
-<images/5thstate.jpg, id=199, 581.7735pt x 317.38576pt>
+<images/5thstate.jpg, id=201, 581.7735pt x 317.38576pt>
 File: images/5thstate.jpg Graphic file (type jpg)
 
 <use images/5thstate.jpg>
-Package pdftex.def Info: images/5thstate.jpg used on input line 285.
+Package pdftex.def Info: images/5thstate.jpg used on input line 284.
 (pdftex.def)             Requested size: 232.70528pt x 126.95204pt.
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.287 ...fifth state being equaled to the ID of B}
+l.286 ...fifth state being equaled to the ID of B}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1023,7 +1003,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.287 ...fifth state being equaled to the ID of B}
+l.286 ...fifth state being equaled to the ID of B}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1036,23 +1016,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287 ...fifth state being equaled to the ID of B}
+l.286 ...fifth state being equaled to the ID of B}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--294
+Underfull \hbox (badness 10000) in paragraph at lines 277--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--300
+Underfull \hbox (badness 10000) in paragraph at lines 277--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--300
+Underfull \hbox (badness 10000) in paragraph at lines 289--292
 
  []
 
@@ -1061,25 +1041,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 295--300
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.300 \item
-            If both positioners are not in a "lock\_sm" situation (line \ref...
- <./images/5thstate.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
+l.292 
+       <./images/5thstate.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 293--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 293--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
@@ -1087,24 +1076,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.0.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 356--356
 
  []
 
@@ -1112,19 +1101,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.0.5}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 356--356
 
  []
 
@@ -1132,19 +1121,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.0.8}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.10}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 356--356
 
  []
 
@@ -1152,28 +1141,28 @@ pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.0.11
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.12}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
+l.356 			}
           pdfTeX warning (ext4): destination with the same identifier (name{Alg
 oLine.0.13}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.358 			}
-           [309] <images/Projection1.jpg, id=238, 588.39825pt x 451.08525pt>
+l.356 			}
+           [309] <images/Projection1.jpg, id=241, 588.39825pt x 451.08525pt>
 File: images/Projection1.jpg Graphic file (type jpg)
 
 <use images/Projection1.jpg>
-Package pdftex.def Info: images/Projection1.jpg used on input line 369.
-(pdftex.def)             Requested size: 235.35513pt x 180.4309pt.
+Package pdftex.def Info: images/Projection1.jpg used on input line 367.
+(pdftex.def)             Requested size: 205.94247pt x 157.8822pt.
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.371 ...or, middle or joint) of both positioners}
+l.369 ...or, middle or joint) of both positioners}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1187,7 +1176,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.371 ...or, middle or joint) of both positioners}
+l.369 ...or, middle or joint) of both positioners}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1200,27 +1189,27 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.371 ...or, middle or joint) of both positioners}
+l.369 ...or, middle or joint) of both positioners}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--373
+Underfull \hbox (badness 10000) in paragraph at lines 360--371
 
  []
 
-[310] <images/1DLookUpTable.jpg, id=247, 652.4375pt x 272.01625pt>
+[310] <images/1DLookUpTable.jpg, id=250, 652.4375pt x 272.01625pt>
 File: images/1DLookUpTable.jpg Graphic file (type jpg)
 
 <use images/1DLookUpTable.jpg>
-Package pdftex.def Info: images/1DLookUpTable.jpg used on input line 379.
-(pdftex.def)             Requested size: 358.84172pt x 149.60939pt.
+Package pdftex.def Info: images/1DLookUpTable.jpg used on input line 377.
+(pdftex.def)             Requested size: 326.21794pt x 136.00778pt.
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.383 ...A to its target, being in between them. }
+l.381 ...A to its target, being in between them. }
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1234,7 +1223,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.383 ...A to its target, being in between them. }
+l.381 ...A to its target, being in between them. }
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1247,13 +1236,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.383 ...A to its target, being in between them. }
+l.381 ...A to its target, being in between them. }
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--385
+Underfull \hbox (badness 10000) in paragraph at lines 372--383
 
  []
 
@@ -1264,7 +1253,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.386 	\section
+l.384 	\section
                {Simulation \& RESULTS}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1275,48 +1264,48 @@ or  <return>  to continue without it.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.392 	\subsection
+l.390 	\subsection
                   {Tests \& results}pdfTeX warning (ext4): destination with the
  same identifier (name{figure.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.392 	\subsection
+l.390 	\subsection
                   {Tests \& results} <./images/Projection1.jpg> <./images/1DLoo
 kUpTable.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 395--397
+Underfull \hbox (badness 10000) in paragraph at lines 393--395
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--402
+Underfull \hbox (badness 10000) in paragraph at lines 397--400
 
  []
 
-<images/configuration1_conv.png, id=261, 208.98074pt x 183.084pt>
+<images/configuration1_conv.png, id=264, 208.98074pt x 183.084pt>
 File: images/configuration1_conv.png Graphic file (type png)
 
 <use images/configuration1_conv.png>
-Package pdftex.def Info: images/configuration1_conv.png used on input line 411.
+Package pdftex.def Info: images/configuration1_conv.png used on input line 409.
 
 (pdftex.def)             Requested size: 117.02841pt x 102.52632pt.
 
-<images/configuration1_time.png, id=262, 201.75375pt x 180.07275pt>
+<images/configuration1_time.png, id=265, 201.75375pt x 180.07275pt>
 File: images/configuration1_time.png Graphic file (type png)
 
 <use images/configuration1_time.png>
-Package pdftex.def Info: images/configuration1_time.png used on input line 415.
+Package pdftex.def Info: images/configuration1_time.png used on input line 413.
 
 (pdftex.def)             Requested size: 115.00082pt x 102.64253pt.
 
-Overfull \hbox (86.54808pt too wide) in paragraph at lines 415--417
+Overfull \hbox (86.54808pt too wide) in paragraph at lines 413--415
 [][]
  []
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1330,7 +1319,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1343,13 +1332,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 437.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 435.
 
 ! LaTeX Error: Something's wrong--perhaps a missing \item.
 
@@ -1357,7 +1346,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1369,7 +1358,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1381,7 +1370,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1393,7 +1382,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1405,7 +1394,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1417,7 +1406,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1429,7 +1418,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1441,7 +1430,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1453,35 +1442,35 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.437 			\end{tabular}}
+l.435 			\end{tabular}}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/configuration2_conv.png, id=263, 208.98074pt x 183.084pt>
+<images/configuration2_conv.png, id=266, 208.98074pt x 183.084pt>
 File: images/configuration2_conv.png Graphic file (type png)
 
 <use images/configuration2_conv.png>
-Package pdftex.def Info: images/configuration2_conv.png used on input line 442.
+Package pdftex.def Info: images/configuration2_conv.png used on input line 440.
 
 (pdftex.def)             Requested size: 117.02841pt x 102.52632pt.
 
-<images/configuration2_time.png, id=264, 208.98074pt x 187.29974pt>
+<images/configuration2_time.png, id=267, 208.98074pt x 187.29974pt>
 File: images/configuration2_time.png Graphic file (type png)
 
 <use images/configuration2_time.png>
-Package pdftex.def Info: images/configuration2_time.png used on input line 446.
+Package pdftex.def Info: images/configuration2_time.png used on input line 444.
 
 (pdftex.def)             Requested size: 117.02841pt x 104.88713pt.
 
-Overfull \hbox (88.57567pt too wide) in paragraph at lines 446--448
+Overfull \hbox (88.57567pt too wide) in paragraph at lines 444--446
 [][]
  []
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.469 				}
+l.467 				}
            
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1495,7 +1484,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.469 				}
+l.467 				}
            
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1508,7 +1497,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1520,7 +1509,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1532,7 +1521,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1544,7 +1533,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1556,7 +1545,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1568,7 +1557,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1580,7 +1569,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1592,7 +1581,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1604,7 +1593,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1616,40 +1605,40 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.469 				}
+l.467 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (18.0134pt too wide) in paragraph at lines 409--472
+Overfull \hbox (18.0134pt too wide) in paragraph at lines 407--470
 []$[]$ $[]$ 
  []
 
-<images/configuration3_conv.png, id=265, 208.98074pt x 183.084pt>
+<images/configuration3_conv.png, id=268, 208.98074pt x 183.084pt>
 File: images/configuration3_conv.png Graphic file (type png)
 
 <use images/configuration3_conv.png>
-Package pdftex.def Info: images/configuration3_conv.png used on input line 476.
+Package pdftex.def Info: images/configuration3_conv.png used on input line 474.
 
 (pdftex.def)             Requested size: 117.02841pt x 102.52632pt.
 
-<images/configuration3_time.png, id=266, 208.98074pt x 183.084pt>
+<images/configuration3_time.png, id=269, 208.98074pt x 183.084pt>
 File: images/configuration3_time.png Graphic file (type png)
 
 <use images/configuration3_time.png>
-Package pdftex.def Info: images/configuration3_time.png used on input line 480.
+Package pdftex.def Info: images/configuration3_time.png used on input line 478.
 
 (pdftex.def)             Requested size: 119.12025pt x 104.35895pt.
 
-Overfull \hbox (90.66751pt too wide) in paragraph at lines 480--482
+Overfull \hbox (90.66751pt too wide) in paragraph at lines 478--480
 [][]
  []
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.499 			}
+l.497 			}
           
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1663,7 +1652,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.499 			}
+l.497 			}
           
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1676,35 +1665,35 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.499 			}
+l.497 			}
           
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/configuration4_conv.png, id=267, 208.98074pt x 183.084pt>
+<images/configuration4_conv.png, id=270, 208.98074pt x 183.084pt>
 File: images/configuration4_conv.png Graphic file (type png)
 
 <use images/configuration4_conv.png>
-Package pdftex.def Info: images/configuration4_conv.png used on input line 504.
+Package pdftex.def Info: images/configuration4_conv.png used on input line 502.
 
 (pdftex.def)             Requested size: 117.02841pt x 102.52632pt.
 
-<images/configuration4_time.png, id=268, 208.98074pt x 183.084pt>
+<images/configuration4_time.png, id=271, 208.98074pt x 183.084pt>
 File: images/configuration4_time.png Graphic file (type png)
 
 <use images/configuration4_time.png>
-Package pdftex.def Info: images/configuration4_time.png used on input line 508.
+Package pdftex.def Info: images/configuration4_time.png used on input line 506.
 
 (pdftex.def)             Requested size: 117.02841pt x 102.52632pt.
 
-Overfull \hbox (88.57567pt too wide) in paragraph at lines 508--510
+Overfull \hbox (88.57567pt too wide) in paragraph at lines 506--508
 [][]
  []
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.527 				}
+l.525 				}
            
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1718,7 +1707,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.527 				}
+l.525 				}
            
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1731,40 +1720,40 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.527 				}
+l.525 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (18.0134pt too wide) in paragraph at lines 474--530
+Overfull \hbox (18.0134pt too wide) in paragraph at lines 472--528
 []$[]$ $[]$ 
  []
 
-<images/configuration5_conv.png, id=269, 208.98074pt x 183.084pt>
+<images/configuration5_conv.png, id=272, 208.98074pt x 183.084pt>
 File: images/configuration5_conv.png Graphic file (type png)
 
 <use images/configuration5_conv.png>
-Package pdftex.def Info: images/configuration5_conv.png used on input line 534.
+Package pdftex.def Info: images/configuration5_conv.png used on input line 532.
 
 (pdftex.def)             Requested size: 117.02841pt x 102.52632pt.
 
-<images/configuration5_time.png, id=270, 208.98074pt x 183.084pt>
+<images/configuration5_time.png, id=273, 208.98074pt x 183.084pt>
 File: images/configuration5_time.png Graphic file (type png)
 
 <use images/configuration5_time.png>
-Package pdftex.def Info: images/configuration5_time.png used on input line 538.
+Package pdftex.def Info: images/configuration5_time.png used on input line 536.
 
 (pdftex.def)             Requested size: 119.12025pt x 104.35895pt.
 
-Overfull \hbox (90.66751pt too wide) in paragraph at lines 538--540
+Overfull \hbox (90.66751pt too wide) in paragraph at lines 536--538
 [][]
  []
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.557 			}
+l.555 			}
           
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1778,7 +1767,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.557 			}
+l.555 			}
           
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1791,35 +1780,35 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.557 			}
+l.555 			}
           
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/configuration6_conv.png, id=271, 208.98074pt x 183.084pt>
+<images/configuration6_conv.png, id=274, 208.98074pt x 183.084pt>
 File: images/configuration6_conv.png Graphic file (type png)
 
 <use images/configuration6_conv.png>
-Package pdftex.def Info: images/configuration6_conv.png used on input line 562.
+Package pdftex.def Info: images/configuration6_conv.png used on input line 560.
 
 (pdftex.def)             Requested size: 117.02841pt x 102.52632pt.
 
-<images/configuration6_time.png, id=272, 208.98074pt x 187.29974pt>
+<images/configuration6_time.png, id=275, 208.98074pt x 187.29974pt>
 File: images/configuration6_time.png Graphic file (type png)
 
 <use images/configuration6_time.png>
-Package pdftex.def Info: images/configuration6_time.png used on input line 566.
+Package pdftex.def Info: images/configuration6_time.png used on input line 564.
 
 (pdftex.def)             Requested size: 117.02841pt x 104.88713pt.
 
-Overfull \hbox (88.57567pt too wide) in paragraph at lines 566--568
+Overfull \hbox (88.57567pt too wide) in paragraph at lines 564--566
 [][]
  []
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.585 				}
+l.583 				}
            
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1833,7 +1822,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.585 				}
+l.583 				}
            
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1846,13 +1835,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.585 				}
+l.583 				}
            
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (18.0134pt too wide) in paragraph at lines 532--588
+Overfull \hbox (18.0134pt too wide) in paragraph at lines 530--586
 []$[]$ $[]$ 
  []
 
@@ -1861,39 +1850,39 @@ Overfull \hbox (18.0134pt too wide) in paragraph at lines 532--588
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.588 		\end{figure}
+l.586 		\end{figure}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{figure.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.588 		\end{figure}
+l.586 		\end{figure}
                      <./images/configuration1_conv.png> <./images/configuration
 1_time.png> <./images/configuration2_conv.png> <./images/configuration2_time.pn
-g>] <images/configuration7_conv.png, id=288, 209.583pt x 183.084pt>
+g>] <images/configuration7_conv.png, id=291, 209.583pt x 183.084pt>
 File: images/configuration7_conv.png Graphic file (type png)
 
 <use images/configuration7_conv.png>
-Package pdftex.def Info: images/configuration7_conv.png used on input line 592.
+Package pdftex.def Info: images/configuration7_conv.png used on input line 590.
 
 (pdftex.def)             Requested size: 117.36566pt x 102.52632pt.
 
-<images/configuration7_time.png, id=289, 209.583pt x 183.084pt>
+<images/configuration7_time.png, id=292, 209.583pt x 183.084pt>
 File: images/configuration7_time.png Graphic file (type png)
 
 <use images/configuration7_time.png>
-Package pdftex.def Info: images/configuration7_time.png used on input line 596.
+Package pdftex.def Info: images/configuration7_time.png used on input line 594.
 
 (pdftex.def)             Requested size: 119.46353pt x 104.35895pt.
 
-Overfull \hbox (91.01079pt too wide) in paragraph at lines 596--598
+Overfull \hbox (91.01079pt too wide) in paragraph at lines 594--596
 [][]
  []
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.615 			}
+l.613 			}
           
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1907,7 +1896,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.615 			}
+l.613 			}
           
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1920,39 +1909,39 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.615 			}
+l.613 			}
           
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/configuration8_conv.png, id=290, 210.7875pt x 183.084pt>
+<images/configuration8_conv.png, id=293, 210.7875pt x 183.084pt>
 File: images/configuration8_conv.png Graphic file (type png)
 
 <use images/configuration8_conv.png>
-Package pdftex.def Info: images/configuration8_conv.png used on input line 620.
+Package pdftex.def Info: images/configuration8_conv.png used on input line 618.
 
 (pdftex.def)             Requested size: 118.04019pt x 102.52632pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 620--622
+Underfull \hbox (badness 10000) in paragraph at lines 618--620
 [][]
  []
 
-<images/configuration8_time.png, id=291, 210.7875pt x 183.084pt>
+<images/configuration8_time.png, id=294, 210.7875pt x 183.084pt>
 File: images/configuration8_time.png Graphic file (type png)
 
 <use images/configuration8_time.png>
-Package pdftex.def Info: images/configuration8_time.png used on input line 624.
+Package pdftex.def Info: images/configuration8_time.png used on input line 622.
 
 (pdftex.def)             Requested size: 118.04019pt x 102.52632pt.
 
-Overfull \hbox (89.58745pt too wide) in paragraph at lines 624--626
+Overfull \hbox (89.58745pt too wide) in paragraph at lines 622--624
 [][]
  []
 
 ! Argument of \@tempf has an extra }.
 <inserted text> 
                 \par 
-l.642 				\end{tabular}}
+l.640 				\end{tabular}}
                         
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1966,7 +1955,7 @@ Runaway argument?
 ! Paragraph ended before \@tempf was complete.
 <to be read again> 
                    \par 
-l.642 				\end{tabular}}
+l.640 				\end{tabular}}
                         
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1979,18 +1968,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.642 				\end{tabular}}
+l.640 				\end{tabular}}
                         
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (18.0134pt too wide) in paragraph at lines 590--645
+Overfull \hbox (18.0134pt too wide) in paragraph at lines 588--643
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 646--649
+Underfull \hbox (badness 10000) in paragraph at lines 644--647
 
  []
 
@@ -1999,66 +1988,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 646--649
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.649 	\section
+l.647 	\section
                {CONCLUSION}pdfTeX warning (ext4): destination with the same ide
 ntifier (name{figure.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.649 	\section
+l.647 	\section
                {CONCLUSION}pdfTeX warning (ext4): destination with the same ide
 ntifier (name{figure.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.649 	\section
+l.647 	\section
                {CONCLUSION}pdfTeX warning (ext4): destination with the same ide
 ntifier (name{figure.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.649 	\section
+l.647 	\section
                {CONCLUSION}pdfTeX warning (ext4): destination with the same ide
 ntifier (name{figure.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.649 	\section
+l.647 	\section
                {CONCLUSION}pdfTeX warning (ext4): destination with the same ide
 ntifier (name{figure.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.649 	\section
+l.647 	\section
                {CONCLUSION} <./images/configuration3_conv.png> <./images/config
 uration3_time.png> <./images/configuration4_conv.png> <./images/configuration4_
 time.png> <./images/configuration5_conv.png> <./images/configuration5_time.png>
  <./images/configuration6_conv.png> <./images/configuration6_time.png> <./image
 s/configuration7_conv.png> <./images/configuration7_time.png> <./images/configu
-ration8_conv.png> <./images/configuration8_time.png>] (./main.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 665.
- [314]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 665.
+ration8_conv.png> <./images/configuration8_time.png>] (./main.bbl
+! Extra }, or forgotten \endgroup.
+l.35 ...drigues, M., Royer, F., Saglia, R., S\{'a}
+                                                  nchez, A., Schnetler, H., ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-(./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 665.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 665.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 662.
+ [314]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 662.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 662.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 662.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 089652968BEFA8D03B5FA3BADC408F59;969.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 665.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 662.
  ) 
 Here is how much of TeX's memory you used:
- 8590 strings out of 493029
- 128638 string characters out of 6136234
- 262956 words of memory out of 5000000
- 11904 multiletter control sequences out of 15000+600000
+ 8594 strings out of 493029
+ 128754 string characters out of 6136234
+ 263051 words of memory out of 5000000
+ 11906 multiletter control sequences out of 15000+600000
  13576 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,15n,30p,859b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,15n,30p,885b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
@@ -2077,10 +2075,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (14 pages, 1287599 bytes).
+Output written on main.pdf (14 pages, 1289780 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 314 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 318 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
  250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

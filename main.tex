@@ -40,10 +40,10 @@
 	\maketitle
 	
 	\begin{abstract}
-		Projects such as "The Dark Energy Spectroscopic Instrument" (DESI)or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS ) are developing spectrographs, composed of more than thousand of optical fibers in a confined hexagonal focal plane, to study the evolution of the universe. Such systems allow fast reconfiguration of the fibers as they are moved simultaneously to their pre-assigned target by a 2-arm positioner within an short interval of time. Moreover, astronomers prioritize the observation of some objects over those that hold less information, creating a hierarchy of importances or priorities. In a scenario where not all the positioners can reach their targets, It is important to ensure the observation of the high-priority targets. \\
+		Projects such as "The Dark Energy Spectroscopic Instrument" (DESI)  [\citenum{2016arXiv161100037D}] or "The Multi Object Optical and Near-infrared Spectrograph" (MOONS ) [\citenum{8ad636d82d8a416f91dd848b1307de5f}] are developing spectrographs, composed of more than thousand of optical fibers in a confined hexagonal focal plane, to study the evolution of the universe. Such systems allow fast reconfiguration of the fibers as they are moved simultaneously to their assigned target by a 2-arm positioner within an short interval of time. Moreover, astronomers prioritize the observation of some objects over those that hold less information, creating a hierarchy of importances or priorities. In a scenario where not all the positioners can reach their targets, It is important to ensure the observation of the high-priority targets. \\
 		In previous works, a decentralized navigation function from the family of potential fields was used for collision-free coordination. While it guarantees convergence of all the positioners to their targets for DESI [\citenum{MakaremDESIConference,makarem2015decentralized}], it fails at planning motion for positioners in MOONS [\citenum{MakaremMoons}]. The reason is that the second arm of the positioners in MOONS is two times the length of the first arm. Covering a larger working space, they are prone to deadlocks, a situation where two or more positioners are blocked by each other and so unable to reach their targets.\\
-		In this paper and in the framework of MOONS project, we present our new approach to integrate pre-assigned priorities with the decentralized navigation functions to reduce the deadlocks situations. For this purpose, we regulate the movements of the positioners using a finite-state machine combined with distance-based heuristics. Each positioner's state dictates its behaviors with respect to other positioners. Distance-based heuristics limit the states transition when a positioner is interacting with its adjacent positioners to localize possible deadlock situations. The advantage of this method is its simplicity as it relies on local interaction of positioners, keeping the complexity of the algorithm quasilinear. In addition, since it does not depend on the positioner's geometry, it is also scalable to other positioner kinematics. \\
-		We developed a motion planning simulator with a graphic interface in python to validate the coordination of the positioners with pre-assigned priorities.  As a result, the number of positioners converging to their targets improve from 60-70\% to 80-95\%. The computation time of the trajectories increases slightly due to the new layer of algorithm added for deadlocks prevention.
+		In this paper and in the framework of MOONS project, we present our new approach to integrate assigned priorities with the decentralized navigation functions to reduce the deadlocks situations. For this purpose, we regulate the movements of the positioners using a finite-state machine combined with distance-based heuristics. Each positioner's state dictates its behaviors with respect to other positioners. Distance-based heuristics limit the states transition when a positioner is interacting with its adjacent positioners to localize possible deadlock situations. The advantage of this method is its simplicity as it relies on local interaction of positioners, keeping the complexity of the algorithm quasilinear. In addition, since it does not depend on the positioner's geometry, it is also scalable to other positioner kinematics. \\
+		We developed a motion planning simulator with a graphic interface in python to validate the coordination of the positioners with assigned priorities.  As a result, the number of positioners converging to their targets improve from 60-70\% to 80-95\%. The computation time of the trajectories increases slightly due to the new layer of algorithm added for deadlocks prevention.
 	\end{abstract}
 	
 	% Include a list of keywords after the abstract 
@@ -51,13 +51,13 @@
 	
 	\section{INTRODUCTION}
 	\label{INTRODUCTION}
-	Recently uncovered that not only the universe is expanding but also that its process is accelerating, massive spectroscopic surveys are used in many international projects such as  "The Dark Energy Spectroscopic Instrument" (DESI) [\citenum{MakaremDESIConference,makarem2015decentralized}] or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS) [\citenum{MakaremMoons}]  to study its evolution. The used spectrographs are composed with more than thousand of optical fiber bundles, in a confined hexagonal focal plane. Each one are moving at the same time to a pre-assigned target by a two arms robotics positioner, making real time observation possible.\\\\\\
+	Recently uncovered that not only the universe is expanding but also that its process is accelerating, massive spectroscopic surveys are used in many international projects such as  "The Dark Energy Spectroscopic Instrument" (DESI) [\citenum{2016arXiv161100037D}] or  "The Multi Object Optical and Near-infrared Spectrograph" (MOONS) [\citenum{8ad636d82d8a416f91dd848b1307de5f}] to study its evolution. The used spectrographs are composed with more than thousand of optical fiber bundles, in a confined hexagonal focal plane. Each one are moving at the same time to a assigned target by a two arms robotics positioner, making real time observation possible.\\\\\\
 	Anti-collision movement between positioners is therefore essential for a well-functioning system. While the completeness of the system, ie convergence of all positioners to their targets, is ensured with the project DESI using a decentralized navigation function algorithm  [\citenum{MakaremMoons,MakaremDESIConference,makarem2015decentralized}], the same approach is not valid for MOONS: its positioners second arm being two time longer as shown in figure ~\ref{MOONS_positioner_simulation} - ~\ref{DESI_positioner_representation}, it is covering a larger workspace and hence creating possible collisions and deadlocks, a situation where positioners, blocked by one another, are unable to reach their targets.\\
 	
 	\begin{figure}[H]
 		\hspace{2cm}
 		\begin{minipage}[t]{4.5cm}
-			\includegraphics[scale=0.3]{images/realPositioner.jpg}
+			\includegraphics[scale=1.2]{images/realPositioner.jpg}
 			\caption{CAD positioner model}
 			\label{MOONS_positioner_representation}
 		\end{minipage}
@@ -91,7 +91,7 @@
 	 Figure \ref{MOONS_positioner_representation} - \ref{MOONS_positioner_simulation} - \ref{sys_representation} shows the MOONS positioner and its equivalent in simulation, where only the second arm (corresponding to the curve segment of the CAD model) is represented. The red dot is the target assigned to the positioner's end-effector, which holds the optic fiber represented by the dot at the extremity of the second arm.
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.56]{images/system_representation.jpg}
+			\includegraphics[scale=1]{images/system_representation.jpg}
 			\caption{Representation of the variables in the system}
 			\label{sys_representation}
 		\end{figure}
@@ -113,10 +113,10 @@
 	\begin{figure}[H]
 		\centering
 		\begin{minipage}[t]{6.5cm}
-			\includegraphics[scale=0.54]{images/first_state_0.jpg}
+			\includegraphics[scale=0.9]{images/first_state_0.jpg}
 		\end{minipage}
 		\begin{minipage}[t]{5cm}
-			\includegraphics[scale=0.54]{images/first_state_ONOFF2.jpg}
+			\includegraphics[scale=0.9]{images/first_state_ONOFF2.jpg}
 		\end{minipage}
 		\caption{\centering Principle of ON/OFF state (left to right image): \\
 			(left image) Positioner B inside  $Z_{ON/OFF}$ of positioner A doesn't have any attractive force and is subject to repulsive force from positioner A, pushing it to the opposite direction of its target B. (right image) The same positioner B, once pushed out of the zone $Z_{ON/OFF}$  by positioner A, regains its attractive force.\\
@@ -126,7 +126,7 @@
 	
 	A direct consequence of using only this state is the problem of deadlock due to oscillations between ON and OFF at the limit of the zone $Z_{ON/OFF}$. Considering an ON positioner A and its OFF neighbour B with lower priority inside the zone $Z_{ON/OFF}$ of A (figure \ref{First_state} right image), when the positioner B is at the border of the zone, it can be subject to the problem of reactivation and deac<tivation of its attractive force. If the reactivated attractive force is opposing the movement of the positioner A, it will re-enter the zone $Z_{ON/OFF}$ of A only to be repulsed again. This switching states can block the positioner A as the adjacent positioner B keeps oscillating at the same place.\\
 	
-	A deadlock can be interpreted like at least two adjacent positioners that stop moving towards their targets because of each other, oscillating indefinitely at the same place in space. A moving average filter on the positioner's velocity can be used to localize and unblock this situation by adding noise to it. Though it might be tempting to modify the magnitude of the different forces or of the noise, one has to consider the risk of collisions due to positioners sudden increase of velocity. \\
+	A deadlock can be interpreted when two or more adjacent positioners stop moving towards their targets because of each other, or oscillating indefinitely at the same place in space. A moving average filter on the positioner's velocity can be used to localize and unblock this situation by adding noise to it. Though it might be tempting to modify the magnitude of the different forces or of the noise, one has to consider the risk of collisions due to positioners sudden increase of velocity. \\
 	Furthermore, only evaluating the velocity is necessary but not sufficient to detect a deadlock as explain later in the sub-chapter \ref{sub_chapter_fifth_state} since positioners can have a null velocity when arrived at their targets or when repulsing another one. \\\\
 	With $v[t]$ the velocity of one positioner at time $t$, $y[t]$ is the output of the average moving filter of window $M$ such as:
 	\begin{equation}
@@ -249,13 +249,13 @@
 	This particular oscillation scenario is shown in figure \ref{fourth_state} with positioner A having a higher assigned priority than positioner B, whose target is inside the zones of A. Once inside the zone $Z_{ON/OFF}$ and $Z_{F_{r}}$, the positioner B changes to OFF and has its attractive force deactivated.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.64]{images/fourth_state.jpg}
+		\includegraphics[scale=1]{images/fourth_state.jpg}
 		\caption{\centering	Configuration of two positioners requiring the principle of the fourth state "Arr":\\
 		Low-priority positioner B whose target B is inside a higher priority "already-arrived" positioner A zones $Z_{ON/OFF}$ and $Z_{F_{r}}$ }
 		\label{fourth_state}
 	\end{figure}
 	In order to solve the problem of oscillation of the positioner near a high priority positioner, which has arrived to the target, we introduce a fourth state, "Arr". This state represents the positioner that has already arrived to its target. \\\\
-	If a positioner A is in "Arr" state, it cannot change the states of any other positioners inside its zone $Z_{ON/OFF}$, regardless of their priorities. 
+	If a positioner A is in "Arr" state, it cannot change the states of any other positioner inside its zone $Z_{ON/OFF}$, regardless of their priorities. 
 	Without having their attractive forces canceled, its neighbour positioners can converge to their targets that are inside the zone of A.\\\\
 	In addition, the zone $Z_{F_{r}}$ of the already-arrived positioner has to be mitigated such that the repulsive forces felt by the neighbour positioners do not hinder their convergences, so we reduce the radius of the repulsion zone $Z_{F_{r}}$. Though two very close targets can make two positioners oscillate a little bit as the one arriving might repulse the one already arrived, both can stabilize and converge surprisingly well by adding some dead-zone between the end-effector and its target or time delay before the positioner exit its "Arr" state.  
 	
@@ -278,8 +278,7 @@
 	Moreover, a pseudo-priority variable, "psPr", is associated to each positioner. It enables the system to obey the following principle, also illustrated in figure \ref{5thState}:\\
 	When in a "lock\_sm" situation, the first goal of the two positioners B and C is not to reach their targets but to solve their current problem by determining which one should have the priority over the other. \\
 	 To solve this situation more quickly, the distances from their end-effector to their respective targets are evaluated. The positioner with the smallest distance has a higher pseudo-priority. The pseudo-priority, "psPr" is only used for positioners in "lock\_sm" situation. All the interactions with the other positioners is regulated with the assigned or memorized priorities. \\\\
-	To unblock a deadlock, the positioner B with higher pseudo-priority has an additional constant repulsive force from the target of the other positioner. The force can be formulated as a direct weighted relation with the average of the recent past velocities values of the positioner in order to diminish the risk of collision due to sudden speed increase.\\\\
-	
+	To unblock a deadlock, the positioner B with higher pseudo-priority has an additional constant repulsive force from the target of the other positioner. The force can be formulated as a direct weighted relation with the average of the recent past velocities values of the positioner in order to diminish the risk of collision due to sudden speed increase.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.4]{images/5thstate.jpg}
@@ -287,9 +286,8 @@
 		With the same priority, inside their zone "$Z_{ON/OFF}$" and in "lock\_sm" situation, the distance from positioner B end-effector to its target is smaller compared to one from end-effector C to target C, the positioner B becomes more important symbolised by its pseudo-priority, "PsPr", being bigger and both fifth state being equaled to the ID of B}
 		\label{5thState}
 	\end{figure}
-	
 	\paragraph{Values \& interactions}\mbox{}\\
-	The fifth state, "lock\_sm", and the pseudo-priority, "psPr", are both respectively initialized at 0 and at the pre-assigned priority of the positioner. They are subject to a change of values when the considered positioner is inside the zone "$Z_{ON/OFF}$" of one of its neighbours and the configuration of this two adjacent positioners is considered leading to a "lock\_sm" situation. \\
+	The fifth state, "lock\_sm", and the pseudo-priority, "psPr", are both respectively initialized at 0 and at the assigned priority of the positioner. They are subject to a change of values when the considered positioner is inside the zone "$Z_{ON/OFF}$" of one of its neighbours and the configuration of this two adjacent positioners is considered leading to a "lock\_sm" situation. \\
 	In case of a "lock\_sm" situation (figure \ref{5thState}), the pseudo-priority of the positioner deemed the most important one is increased by 1, while both positioner's fifth states "lock\_sm" are being equaled to the ID of the most important positioner. The reason is to give a unique identification so the two positioners can be recognized among their neighgours that they are both together in a "lock\_sm" situation.\\ 
 	
  The values of all the states depend not only on the ON/OFF state but also on the new introduced variables: "lock\_sm" and "psPr". The pseudo-code of algorithm \ref{First_algo} is then completed with conditions to take into account all these new possible interactions between positioners. \\
@@ -361,12 +359,12 @@ The agent positioner always memorizes the priority that the neighbour positioner
 	
 	\paragraph{Deadlock "lock\_sm" localization}\mbox{}\\
 	In this paragraph, the objective is to describe how we consider the configuration between two positioners to be a "lock\_sm" situation.\\
-	With two adjacent positioners, called agent positioner and its neighbour, having an equal pre-assigned priority and being inside their zones "$Z_{ON/OFF}$", we use the "point of view" from both their closest parts (end-effector, middle or joint) to assess the possibility of deadlock.\\
+	With two adjacent positioners, called agent positioner and its neighbour, having an equal assigned priority and being inside their zones "$Z_{ON/OFF}$", we use the "point of view" from both their closest parts (end-effector, middle or joint) to assess the possibility of deadlock.\\
 	The "point of view" can be understood as how the agent is seeing its target and its neighbours target with respect to its neighbour positioner closest part.
 	Mathematically, as illustrated in figure \ref{projection},  we define it as the projection of the agent and neighbour targets on a line created by the vector between the closest parts of both positioners.\\
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.4]{images/Projection1.jpg}
+		\includegraphics[scale=0.35]{images/Projection1.jpg}
 		\caption{\centering Point of view in 1D configuration:\\
 			 Projection of agent and neighbour targets on the line created from closest parts (end-effector, middle or joint) of both positioners}
 		\label{projection}
@@ -376,7 +374,7 @@ The agent positioner always memorizes the priority that the neighbour positioner
 		Since the movement of the positioner is planar with 2 degree of freedom, having the point of view from both agent and neighbour positioners allows a better perspective of the current configuration. As such, the consequence is that if their configuration is considered as a deadlock from the point of view of one positioner, then both positioners are in deadlock situation. In other words, we only need one projections to be a 1D configuration deadlock in order to consider the whole situation as a "lock\_sm" one. 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.55]{images/1DLookUpTable.jpg}
+		\includegraphics[scale=0.50]{images/1DLookUpTable.jpg}
 		\caption{\centering
 			 Configuration examples of look up table logic:\\
 			On the left column, positioner A and B movements are hindering each other; 
@@ -643,20 +641,19 @@ The agent positioner always memorizes the priority that the neighbour positioner
 				\label{configuration8_result} 
 			\end{minipage}
 		\end{figure}					
-	For all the configuration tests, the general evolution of the results remains similar: when using our finite state machine, an improvement of positioners convergence from 60-70\% to 80-95\% can be observed globally and also for each test.\\
-	The computation time also becomes bigger, but is kept to a quasilinear order. It is an expected result since we added an another layer of computation to the already existing algorithm (Without FSM) that we use for comparison. With better optimization such as parallel computation and/or more performant hardwares, a better time performance can be achieved.\\\\
-	 Though all their assigned priorities to each positioner are the same value, the results of convergence improvement with our method also demonstrate indirectly the robustness of our algorithm to take into account different priorities. Due to the mechanism of the fifth state of the finite state machine, interactions of positioners with similar priority values also involve all the other states as their priorities become locally different. 	
+	For all the configuration tests, the general evolution of the results remains similar: when using the finite state machine, we can observe an improvement of positioners convergence from 60-70\% to 80-95\%.\\
+	The computation time increases almost linearly. It is an expected result since we added another layer of computation to the already existing algorithm that we use for comparison. With better optimization such as parallel computation and/or more performant hardwares, a better time performance can be achieved.\\\\
+	 Although positioners have the same priorities in our simulations, the improvement in convergence demonstrates the robustness of our algorithm to take into account different priorities. Due to the mechanism of the fifth state of the finite state machine, interactions of positioners with similar priorities also involve all the other states as their priorities become locally different. 	
 	\section{CONCLUSION}
 	\label{CONCLUSION}
 	In the context of the MOONS project and as an extension of [\citenum{MakaremMoons}], an approach with a finite state machine is built on top of a decentralized navigation function from the potential field family. It enables better coordination of a multi-objects positioners inside a hexagonal confined space. With its different states, it takes into account different priorities assigned to each positioner, creating a hierarchy of importance where positioners with higher priority have more probabilities to reach their targets. Along with the possibility to manage deadlocks, it enables a better convergence of the system:
 	 an improvement from  60-70\% to 80-95\% of positioners in the system converging to their targets is observed from repeatability tests. The results are obtained from comparing our approach with the one using only the decentralized navigation function. Furthermore, the algorithm is scalable to other system configuration than MOONS as it doesn't depend on the positioner's geometry.\\
-	Since we added another layer of complexity to an already existing algorithm, the trajectories computation time becomes slower, but kept in a  quasilinear order. One possible work can be to further optimize the algorithm by using the right optimization method such as parallel computing or more performant hardwares. Moreover, since our approach has no proof of completeness, more research on the algorithm for a better positioner convergence can be consider.\\
+	Since we added another layer of complexity to an already existing algorithm, the trajectories computation time becomes slower, but kept in a  quasilinear order. One possible work can be to further optimize the algorithm by using the right optimization method such as parallel computing or more performant hardwares. Moreover, since our approach has no proof of completeness, more research on the algorithm for a better positioner convergence can be consider.
 	Extending this approach to take into account other features, such as for the project SLOAN-SDSS5 that needs to select which (UV, visible or IR) optical fibers to use within one positioner is also a possibility. It is a subject which is particularly interesting for astronomers since not all objects in the universe can be well observed in the same range of the optic spectrum.
 	
 	\acknowledgments % equivalent to \section*{ACKNOWLEDGMENTS}       
 	
-	I would like to thank my supervisor Dr. Denis Gillet for his patience and trust in me, and also to Dr. Mohammed Bouri and prof. Jean-Paul Kneib for their supports. A lot of thanks to Ezequiel Gonzalez for our brainstorming sessions and to Dr. Laleh Makarem for reviewing my work and her advices, without whom this paper and algorithm wouldn't have been possible; and finally, to all the friendly members of the REACT Lab who made my working place a nice and productive environment. 
-	
+	The authors would like to thank Ezequiel Gonzalez Debada for the brainstorming sessions.
 
 % References
 \bibliography{report} % bibliography data in report.bib
